@@ -71,7 +71,7 @@
     <input type="text" bind:value={newTimerMinutes} placeholder="Minutes" />
     <input type="text" bind:value={newTimerSeconds} placeholder="Seconds" />
     <button on:click={addTimer}>Add Timer</button>
-    <button on:click={clearTimers}>Clear timers</button>
+    
   </div>
 
   <h4>You have {timers.length} timer{#if timers.length != 1}s{/if} running currently</h4>  
@@ -81,6 +81,7 @@
     <Timer name={timer.name} id={timer.id} timerDuration={timer.duration} on:remove={deleteTimer}/>
     {/each}
   </div>
+  <button class="clear-button" on:click={clearTimers}>Clear timers</button>
   
 
 
@@ -110,5 +111,18 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+  }
+
+  .clear-button{
+    margin: 1rem;
+    background-color: white;
+    border: none;
+    color: rgb(151, 0, 0);
+    border-bottom: 1px transparent solid;
+    transition: all 0.3s ease;
+  }
+  .clear-button:hover{
+    cursor: pointer;
+    color: red;
   }
 </style>
