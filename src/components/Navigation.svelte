@@ -1,17 +1,19 @@
 <script lang="ts">
+    
 </script>
 
 <div>
   <a href="/">Home</a>
   <a href="/about/">About</a>
   <a href="/blog/">Blog</a>
+  <a href="/timers/">Timers</a>
 </div>
 
 <style>
     div {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        place-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 
     a {
