@@ -1,13 +1,19 @@
 <!-- Timer.svelte -->
 <script lang="ts">
+  import Cross from '../assets/Cross.svelte'
   import { onMount, onDestroy, createEventDispatcher } from 'svelte';
   const dispatch = createEventDispatcher();
 
   export let name :string;
   export let id : number;
-  export let timerDuration: number;
+  export let timerDuration: number; // in seconds
+  export let dateAdded: number; // in miliseconds
 
-  let time = timerDuration;
+  let time = Math.floor(( timerDuration * 1000 - (Date.now() - dateAdded)) / 1000);
+
+  $: hours = Math.floor((time / 60 / 60));
+  $: minutes = Math.floor((time - hours * 3600) / 60);
+  $: seconds = Math.floor(time % 3600 %60)
   let interval : any;
 
   function removeThis(){
@@ -39,25 +45,33 @@
 
 </script>
 
-<div>
-  <img src="/close_ring_light.svg" on:click={removeThis} />
+<div class='wrap'>
+  
     {#if !Boolean(name)}
       {timerDuration} second{#if timerDuration>1}s{/if} timer
     {:else}
-      {name}
+      <h1>{name} </h1>
     {/if}
 
-  
-  <p>{time} seconds left </p>
+  <span>{hours} hours</span>
+  <span>{minutes} minutes</span>
+  <span>{seconds} seconds left</span>
+  <div class="cross" on:click={removeThis} on:keydown={removeThis}>
+    <Cross />
+  </div>
 </div>
 
 <style>
-  img {
+  .cross {
     position: absolute;
     top: 0;
     right: 0;
+    width: 1rem;
+    height: 1rem;
+    margin: 0.2rem;
   }
-  div {
+  .wrap {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: start;

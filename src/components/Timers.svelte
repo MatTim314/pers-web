@@ -4,7 +4,7 @@
   import { onMount, onDestroy } from 'svelte';
 
   let timers : any[]= [];
-
+;;
   // Main app component
   let newTimerName = '';
   let newTimerId = 1;
@@ -18,7 +18,8 @@
       {
         id: newTimerId,
         name: newTimerName,
-        duration: ((newTimerHours ? newTimerHours : 0) * 60 * 60) + ((newTimerMinutes ? newTimerMinutes : 0) * 60) + (newTimerSeconds ? newTimerSeconds : 0)
+        duration: ((newTimerHours ? newTimerHours : 0) * 60 * 60) + ((newTimerMinutes ? newTimerMinutes : 0) * 60) + (newTimerSeconds ? newTimerSeconds : 0),
+        dateAdded: Date.now() 
       }
     ];
     newTimerId += 1;
@@ -30,10 +31,12 @@
   function clearTimers(){
     timers = []
     newTimerId = 0;
+    saveTimers()
   }
 
   function deleteTimer(event : any){
     timers = timers.filter((timer) => timer.id !== event.detail.id)
+    saveTimers()
   }
   // Save timers to localStorage
   function saveTimers() {
@@ -78,10 +81,10 @@
 
   <div class="timers">
     {#each timers as timer}
-    <Timer name={timer.name} id={timer.id} timerDuration={timer.duration} on:remove={deleteTimer}/>
+    <Timer name={timer.name} id={timer.id} timerDuration={timer.duration} dateAdded={timer.dateAdded} on:remove={deleteTimer}/>
     {/each}
   </div>
-  <button class="clear-button" on:click={clearTimers}>Clear timers</button>
+  <button class="clear-button" on:click={clearTimers}>Delete all timers</button>
   
 
 
