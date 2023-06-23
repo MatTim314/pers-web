@@ -3,17 +3,26 @@
 </script>
 
 <div>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
-  <a href="/timers/">Timers</a>
+    <div>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/timers/">Timers</a>
+    </div>
 </div>
+
 
 <style>
     div {
         display: flex;
-        flex-direction: row;
         justify-content: center;
+    }
+    div > div{
+        align-self: center;
+        width: 50%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
     }
 
     a {
