@@ -4,8 +4,8 @@
   import { onMount, onDestroy, createEventDispatcher } from 'svelte';
   const dispatch = createEventDispatcher();
 
-  export let name :string;
-  export let id : number;
+  export let description :string;
+  export let id : string;
   export let timerDuration: number; // in seconds
   export let dateAdded: number; // in miliseconds
 
@@ -14,7 +14,7 @@
   $: hours = Math.floor((time / 60 / 60));
   $: minutes = Math.floor((time - hours * 3600) / 60);
   $: seconds = Math.floor(time % 3600 %60)
-  let interval : any;
+  let interval : number;
 
   function removeThis(){
     dispatch('remove', {
@@ -47,10 +47,10 @@
 
 <div class='wrap'>
   
-    {#if !Boolean(name)}
+    {#if !Boolean(description)}
       {timerDuration} second{#if timerDuration>1}s{/if} timer
     {:else}
-      <h1>{name} </h1>
+      <h1>{description} </h1>
     {/if}
 
   <span>{hours} hours</span>

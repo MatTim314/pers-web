@@ -1,51 +1,57 @@
 <!-- Timers.svelte -->
 <script lang="ts">
-  import Timer from './Timer.svelte';
-  import { onMount, onDestroy } from 'svelte';
+  import Timer from "./Timer.svelte";
+  import { onMount, onDestroy } from "svelte";
+  import { v4 as uuid4 } from "uuid";
 
-  let timers : any[]= [];
-;;
+  let timers: any[] = [];
   // Main app component
-  let newTimerName = '';
-  let newTimerId = 1;
-  let newTimerHours : number;
-  let newTimerMinutes : number;
-  let newTimerSeconds : number;
+  let newTimerDescription = "";
+  let newTimerHours: number;
+  let newTimerMinutes: number;
+  let newTimerSeconds: number;
 
+  function resetInputs() {
+    newTimerDescription = "";
+    newTimerMinutes = 0;
+    newTimerSeconds = 0;
+    newTimerHours = 0;
+  }
   function addTimer() {
     timers = [
       ...timers,
       {
-        id: newTimerId,
-        name: newTimerName,
-        duration: ((newTimerHours ? newTimerHours : 0) * 60 * 60) + ((newTimerMinutes ? newTimerMinutes : 0) * 60) + (newTimerSeconds ? newTimerSeconds : 0),
-        dateAdded: Date.now() 
-      }
+        id: uuid4(),
+        name: newTimerDescription,
+        duration:
+          (newTimerHours ? newTimerHours : 0) * 60 * 60 +
+          (newTimerMinutes ? newTimerMinutes : 0) * 60 +
+          (newTimerSeconds ? newTimerSeconds : 0),
+        dateAdded: Date.now(),
+      },
     ];
-    newTimerId += 1;
-    newTimerName = '';
-    saveTimers()
+    resetInputs();
+    saveTimers();
   }
 
   // Clears timers array
-  function clearTimers(){
-    timers = []
-    newTimerId = 0;
-    saveTimers()
+  function clearTimers() {
+    timers = [];
+    saveTimers();
   }
 
-  function deleteTimer(event : any){
-    timers = timers.filter((timer) => timer.id !== event.detail.id)
-    saveTimers()
+  function deleteTimer(event: any) {
+    timers = timers.filter((timer) => timer.id !== event.detail.id);
+    saveTimers();
   }
   // Save timers to localStorage
   function saveTimers() {
-    localStorage.setItem('timers', JSON.stringify(timers));
+    localStorage.setItem("timers", JSON.stringify(timers));
   }
 
   // Load timers from localStorage
   function loadTimers() {
-    const savedTimers = localStorage.getItem('timers');
+    const savedTimers = localStorage.getItem("timers");
     if (savedTimers) {
       timers = JSON.parse(savedTimers);
     }
@@ -57,40 +63,57 @@
   onDestroy(() => {
     saveTimers();
   });
-
-
-
 </script>
 
 <main>
-
-  
-  
-  
-
   <div class="add-timer">
-    <input type="text" bind:value={newTimerName} placeholder="Timer name" />
-    <input type="text" bind:value={newTimerHours} placeholder="Hours" />
-    <input type="text" bind:value={newTimerMinutes} placeholder="Minutes" />
-    <input type="text" bind:value={newTimerSeconds} placeholder="Seconds" />
+    <div class="labeled-input-box">
+      <p>Description</p>
+      <input
+        type="text"
+        bind:value={newTimerDescription}
+        placeholder="Description"
+      />
+    </div>
+    <div class="labeled-input-box">
+      <p>Hours</p>
+      <input type="text" bind:value={newTimerHours} placeholder="Hours" />
+    </div>
+    <div class="labeled-input-box">
+      <p>Minutes</p>
+      <input
+        type="text"
+        bind:value={newTimerMinutes}
+        placeholder="Minutes"
+      />
+    </div>
+    <div class="labeled-input-box">
+      <p>Seconds</p>
+      <input
+        type="text"
+        bind:value={newTimerSeconds}
+        placeholder="Seconds"
+      />
+    </div>
     <button on:click={addTimer}>Add Timer</button>
-    
   </div>
 
-  <h4>You have {timers.length} timer{#if timers.length != 1}s{/if} running currently</h4>  
+  <h4>
+    You have {timers.length} timer{#if timers.length != 1}s{/if} running currently
+  </h4>
 
   <div class="timers">
     {#each timers as timer}
-    <Timer name={timer.name} id={timer.id} timerDuration={timer.duration} dateAdded={timer.dateAdded} on:remove={deleteTimer}/>
+      <Timer
+        description={timer.name}
+        id={timer.id}
+        timerDuration={timer.duration}
+        dateAdded={timer.dateAdded}
+        on:remove={deleteTimer}
+      />
     {/each}
   </div>
   <button class="clear-button" on:click={clearTimers}>Delete all timers</button>
-  
-
-
-    
-
-
 </main>
 
 <style>
@@ -98,7 +121,7 @@
     width: 5rem;
   }
 
-  .timers{
+  .timers {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -116,7 +139,7 @@
     gap: 1rem;
   }
 
-  .clear-button{
+  .clear-button {
     margin: 1rem;
     background-color: white;
     border: none;
@@ -124,7 +147,7 @@
     border-bottom: 1px transparent solid;
     transition: all 0.3s ease;
   }
-  .clear-button:hover{
+  .clear-button:hover {
     cursor: pointer;
     color: red;
   }
