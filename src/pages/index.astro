@@ -1,38 +1,49 @@
 ---
 // Component Imports
-import Counter from '../components/Counter.svelte';
-import Navigation from '../components/Navigation.svelte';
+import Counter from "../components/Counter.svelte";
+import Footer from "../components/Footer.svelte";
+import Navigation from "../components/Navigation.svelte";
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<style>
-			html,
-			body {
-				font-family: system-ui;
-				margin: 0;
-			}
-			body {
-				padding: 2rem;
-			}
-		</style>
-	</head>
-	<body>
-		
-		<main>
-			
-			<Navigation/>	
-			<p>This is supposed to be a homepage</p>
-		</main>
-	</body>
-	<style is:global>
-		
-	</style>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        font-family: system-ui;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <Navigation />
+      <div class="main-body"></div>
+      <Footer />
+    </main>
+  </body>
+  <style is:global>
+    .main-body {
+    }
+    main {
+      position: relative;
+      height: 100vh;
+    }
+
+    
+  </style>
 </html>

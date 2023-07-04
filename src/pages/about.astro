@@ -2,6 +2,7 @@
 // Component Imports
 import Counter from "../components/Counter.svelte";
 import Navigation from "../components/Navigation.svelte";
+import Footer from "../components/Footer.svelte";
 
 const pageTitle = "About me";
 ---
@@ -12,6 +13,7 @@ const pageTitle = "About me";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/styles/global.css" />
     <style>
       html,
       body {
@@ -40,5 +42,6 @@ const pageTitle = "About me";
       This site will update as I complete more of the tutorial, so keep checking
       back and see how my journey is going!
     </p>
+    <Footer />
   </body>
 </html>
