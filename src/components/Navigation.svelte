@@ -6,7 +6,7 @@
     <div>
     <a href="/">Home</a>
     <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <a href="/projects/">Projects</a>
     <a href="/timers/">Timers</a>
     </div>
 </div>
@@ -26,8 +26,9 @@
     }
 
     a {
+        font-family: inherit;
         text-decoration: none;
-        color: black;
+        color: inherit;
         padding: 2rem;
         font-size: 1.5rem;
     }
