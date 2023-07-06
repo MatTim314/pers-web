@@ -48,6 +48,7 @@
     border-radius: 10px;
     width: 50%;
     cursor: pointer;
+    min-height: 300px;
   }
   .description {
     color: #92828D;
