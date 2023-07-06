@@ -9,7 +9,7 @@
       description={"This was a school project done in C++ from scratch using only OpenGL library. Main purpose was to get familiar with rendering methods, lightning models and optimalization. Result was a glooming game about not freezing to death."}
       imageSource={'/lk.gif'}
       coverSource={'/fire-cover.png'}
-      link={""}/>
+      link={"https://github.com/MatTim314/to-build-a-fire/tree/main"}/>
 
       <Project 
       name={"Acolyte"}
