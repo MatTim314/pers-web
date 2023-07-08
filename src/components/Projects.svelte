@@ -3,7 +3,8 @@
 </script>
 
 <div class="projects">
-    
+<h1>Projects</h1>
+<p>Other things I've made</p>
 <Project 
       name={"To Build a Fire"}
       description={"This was a school project done in C++ from scratch using only OpenGL library. Main purpose was to get familiar with rendering methods, lightning models and optimalization. Result was a glooming game about not freezing to death."}

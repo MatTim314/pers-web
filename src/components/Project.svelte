@@ -35,9 +35,13 @@
     .project:hover{
         transform: translate(0, -3px);
         background-color: #172033;
-        transition: background-color 150ms ease-in, transform 150ms ease-in-out;;
+        transition: background-color 150ms ease-in, transform 150ms ease-in-out;
+        box-shadow: 1px 1px 5px black;
     }
 
+    .project:focus-visible{
+      
+    }
   .project {
     display: grid;
     grid-template-columns: 50% 50%;
