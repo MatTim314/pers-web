@@ -3,7 +3,7 @@
 </script>
 
 <div class="projects">
-<h1>Projects</h1>
+<span class="header">Projects</span >
 <p>Other things I've made</p>
 <Project 
       name={"To Build a Fire"}
@@ -35,4 +35,8 @@
         align-items: center;
         gap: 2rem;
     }
+    .header {
+        font-size: 3rem;
+    }
+    
 </style>
