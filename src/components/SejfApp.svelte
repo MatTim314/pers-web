@@ -179,6 +179,7 @@
     background-color: rgb(206, 206, 206);
   }
   .jizdenka {
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: min-content 1fr min-content;
     align-items: center;
@@ -209,7 +210,6 @@
     overflow: hidden;
   }
   .chevron {
-    margin-right: 1rem;
     color: #e02d06;
   }
 
@@ -252,6 +252,9 @@
   }
 
   .footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
     height: 6rem;
     background-color: var(--brown);
     display: grid;
