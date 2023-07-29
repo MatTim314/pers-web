@@ -1,0 +1,8 @@
+<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 2">
+<path id="Rectangle 1" d="M1 4C1 2.34315 2.34315 1 4 1H19C20.1046 1 21 1.89543 21 3V19C21 20.1046 20.1046 21 19 21H3C1.89543 21 1 20.1046 1 19V4Z" fill="white" stroke="black" stroke-width="2"/>
+<rect id="Rectangle 2" x="9" y="4" width="8" height="4" fill="white" stroke="black" stroke-width="2"/>
+<path id="Rectangle 3" d="M1 19C1 17.8954 1.89543 17 3 17H19C20.1046 17 21 17.8954 21 19V19C21 20.1046 20.1046 21 19 21H3C1.89543 21 1 20.1046 1 19V19Z" stroke="black" stroke-width="2"/>
+<line id="Line 3" x1="6" y1="1" x2="6" y2="18" stroke="black" stroke-width="2"/>
+</g>
+</svg>

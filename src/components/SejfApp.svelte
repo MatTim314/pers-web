@@ -102,8 +102,8 @@
       on:click={() => (current = "help")}
       on:keypress={() => (current = "help")}
     >
-      <span class="material-symbols-sharp icon"> menu_book </span>
-      HELP
+        <img class="material-symbols-sharp icon book-icon" src="/book-icon.png" alt="book-icon">
+    HELP
     </div>
     <div
       class="button messages"
@@ -111,7 +111,7 @@
       on:click={() => (current = "messages")}
       on:keypress={() => (current = "messages")}
     >
-      <span class="material-symbols-sharp icon"> mail </span>
+      <img class="material-symbols-sharp icon book-icon" src="/message-icon.png" alt="book-icon">
       MESSAGES
     </div>
   </footer>
@@ -283,12 +283,19 @@
   .selected {
     background-color: white;
     color: #1c1714;
+    
+  }
+  .selected > img {
+    filter: invert(26%) sepia(48%) saturate(7180%) hue-rotate(1deg) brightness(90%) contrast(96%);
   }
   .selected > span {
     color: #e02d06;
   }
-
   .icon {
     font-size: 33px;
   }
+  .book-icon {
+    height: 24px;
+  }
+
 </style>
