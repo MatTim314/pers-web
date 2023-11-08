@@ -4,7 +4,6 @@
 
 <div class="projects">
 <span class="header">Projects</span >
-<p>Other things I've made</p>
 <Project 
       name={"To Build a Fire"}
       description={"This was a school project done in C++ from scratch using only OpenGL library. Main purpose was to get familiar with rendering methods, lightning models and optimalization. Result was a glooming game about not freezing to death."}
@@ -20,11 +19,11 @@
       link={"https://github.com/MatTim314/acolyte"}/>
 
       <Project 
-      name={"Password Generator"}
-      description={"Project done in Python for generating strong passwords. "}
-      imageSource={'/passwords.gif'}
-      coverSource={'/password-cover.png'}
-      link={"https://github.com/MatTim314/pswrd_gen"}/>
+      name={"Github GET"}
+      description={"Simple wrapper around Github to extract information about users and their repositories"}
+      imageSource={'/githubget.png'}
+      coverSource={''}
+      link={"https://github.com/MatTim314/github-get"}/>
     
 </div>
 
@@ -36,6 +35,7 @@
         gap: 2rem;
     }
     .header {
+        
         font-size: 3rem;
     }
     

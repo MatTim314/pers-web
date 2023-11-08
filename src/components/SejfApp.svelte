@@ -1,21 +1,26 @@
 <script lang="ts">
   let current = "home";
   let date = new Date();
-  let id : string = makeId();
+  let id: string = makeId();
 
-  function makeId(){
-    return Math.random().toString(36).substring(2,11) + " / " + Math.random().toString(10).substring(2,8)
+  function makeId() {
+    return (
+      Math.random().toString(36).substring(2, 11) +
+      " / " +
+      Math.random().toString(10).substring(2, 8)
+    );
   }
-  function formatDate(date: Date): string{
-    return date.toLocaleDateString("en-GB", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    }).replace(/\//g, ".").replace(/\,/g, " ");
+  function formatDate(date: Date): string {
+    return date
+      .toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+      .replace(/\//g, ".")
+      .replace(/\,/g, " ");
   }
-
 
   date.setMinutes(date.getMinutes() - 5);
   let fromDate = formatDate(date);
@@ -33,9 +38,12 @@
 <div class="container">
   <dialog id="dialog" bind:this={dialog}>
     <div class="text">
-      <p class="first">DPMB, a.s. <br> Jízdenka přestupní 19 Kč. Platí v zónách 100 + 101 mimo vlak.</p>
-      <p>Ticket validity <br> From: {fromDate} <br> To: {toDate}</p>
-      <p>ID <br> {id}</p>
+      <p class="first">
+        DPMB, a.s. <br /> Jízdenka přestupní 19 Kč. Platí v zónách 100 + 101 mimo
+        vlak.
+      </p>
+      <p>Ticket validity <br /> From: {fromDate} <br /> To: {toDate}</p>
+      <p>ID <br /> {id}</p>
     </div>
 
     <footer>
@@ -102,8 +110,12 @@
       on:click={() => (current = "help")}
       on:keypress={() => (current = "help")}
     >
-        <img class="material-symbols-sharp icon book-icon" src="/book-icon.png" alt="book-icon">
-    HELP
+      <img
+        class="material-symbols-sharp icon book-icon"
+        src="/book-icon.png"
+        alt="book-icon"
+      />
+      HELP
     </div>
     <div
       class="button messages"
@@ -111,7 +123,11 @@
       on:click={() => (current = "messages")}
       on:keypress={() => (current = "messages")}
     >
-      <img class="material-symbols-sharp icon book-icon" src="/message-icon.png" alt="book-icon">
+      <img
+        class="material-symbols-sharp icon book-icon"
+        src="/message-icon.png"
+        alt="book-icon"
+      />
       MESSAGES
     </div>
   </footer>
@@ -127,7 +143,7 @@
     --bottom-grey-btn: #cacacb;
     --top-grey-btn: #e1e0e1;
   }
-  ::backdrop{
+  ::backdrop {
     background-color: #00000094;
   }
   dialog {
@@ -150,7 +166,11 @@
     margin-top: 8px;
   }
   dialog footer {
-    background: linear-gradient(0deg, rgba(130,130,131,1) 0%, rgba(164,165,164,1) 100%);
+    background: linear-gradient(
+      0deg,
+      rgba(130, 130, 131, 1) 0%,
+      rgba(164, 165, 164, 1) 100%
+    );
     height: 3.5rem;
     display: flex;
     justify-content: center;
@@ -159,7 +179,11 @@
   .cancel-button {
     margin: 8px;
     box-shadow: #1c1714 0 1px 1px;
-    background: linear-gradient(0deg, rgba(202,202,203,1) 0%, rgb(245, 245, 245) 100%);
+    background: linear-gradient(
+      0deg,
+      rgba(202, 202, 203, 1) 0%,
+      rgb(245, 245, 245) 100%
+    );
     border: none;
     border-radius: 2px;
     width: 50%;
@@ -216,7 +240,6 @@
   .material-symbols-sharp {
     font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
   }
-  
 
   .right-side,
   .left-side {
@@ -283,10 +306,10 @@
   .selected {
     background-color: white;
     color: #1c1714;
-    
   }
   .selected > img {
-    filter: invert(26%) sepia(48%) saturate(7180%) hue-rotate(1deg) brightness(90%) contrast(96%);
+    filter: invert(26%) sepia(48%) saturate(7180%) hue-rotate(1deg)
+      brightness(90%) contrast(96%);
   }
   .selected > span {
     color: #e02d06;
@@ -297,5 +320,4 @@
   .book-icon {
     height: 24px;
   }
-
 </style>

@@ -1,15 +1,12 @@
 <script lang="ts">
 
-    function recolor(){
-        alert('nice')
-    }
 </script>
 
 <div class="outer">
     
     <div class="header"></div>
     <p>I'm a software engineer with a thing for design. I enjoy creating useful tools that also look good.</p>
-    <p>Feel free to <a class="dw-button" on:mouseenter={recolor} href="../../public/CV-eng-IT.pdf">download my CV.</a></p>
+    <p class="second-par">Feel free to <a class="dw-button" href="../../public/CV-eng-IT.pdf">download my CV.</a></p>
     <div class="image-overlay"></div>
     
 </div>
@@ -31,16 +28,15 @@
         border-radius: 10px;
         right: 0;
         top: 7rem;
-        background-image: url(../../public/cv-preview.png);
+        background-image: url(/cv-preview.png);
         background-position: 0 0;
         background-size: 100% 100%;
         background-repeat: no-repeat;
         z-index: -1;
         transition: opacity 300ms ease, box-shadow 300ms ease;
     }
-    .image-overlay:hover{
+    .dw-button:hover + .second-par > .image-overlay{
         opacity: 0.3;
-        box-shadow: 0 0 10px white;
     }
     .header {
         align-self: flex-start;

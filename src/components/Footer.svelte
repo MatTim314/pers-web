@@ -39,5 +39,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100vw;
+        box-sizing: border-box;
     }
 </style>
