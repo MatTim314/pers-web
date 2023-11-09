@@ -9,10 +9,6 @@
   date.setMinutes(date.getMinutes() + 20);
   const targetTime = Date.now() + 60 * 15 * 1000;
   let toDate = formatDate(date);
-  let backgroundColor = ticket ? "white" : "--var(background-color)";
-  document.body.style.backgroundColor = ticket
-    ? "white"
-    : "--var(background-color)";
   let interval = setInterval(() => {
     time = getCurrentTime();
     remaining_time = formatTime(getRemainingTime(date));
@@ -146,7 +142,7 @@
   {/if}
   {#if ticket}
     <div class="ticket_main">
-      <div class="header ticket_section">
+      <div class="header">
         <span class="ticket_type">Jízdenka přestupní 19 Kč</span>
         <span class="remaining">Active (remaining {remaining_time})</span>
       </div>
@@ -231,7 +227,7 @@
     align-items: center;
     gap: 1rem;
     padding-left: 1rem;
-    box-shadow: 0 0 5px 0 rgb(126, 126, 126);
+    box-shadow: 0 0 10px -3px rgb(171, 171, 171);
   }
 
   main {
@@ -382,18 +378,19 @@
     background-color: green;
     color: white;
     width: 100%;
-    box-sizing: border-box;
     height: 5rem;
+    padding-bottom: 1rem;
   }
   .ticket_type {
     font-weight: bold;
+    font-size: 17px;
   }
   .remaining {
     background-color: rgb(1, 70, 0);
     color: rgb(191, 249, 186);
     padding: 5px 10px 5px 10px;
     border-radius: 20px;
-    font-size: small;
+    font-size: 12px;
     font-weight: 500;
   }
   .code {
@@ -455,7 +452,7 @@
   .code_time {
     color: rgb(184, 7, 31);
     font-weight: 500;
-    animation: moveLeftRight 1s linear infinite;
+    animation: moveLeftRight 0.5s linear infinite;
     position: relative;
   }
   @keyframes moveLeftRight {
