@@ -100,7 +100,7 @@
   >
     chevron_left
   </span>
-  <h2>Public transport ticket{ticket ? " details" : "s"}</h2>
+  <h2>Public transport ticket{ticket ? " detail" : "s"}</h2>
 </header>
 
 <main>
@@ -331,10 +331,12 @@
     border-top: var(--border-width) solid var(--border-color);
   }
   .dots {
-    width: 90%;
+    width: 92%;
     border-bottom: 6px dotted rgb(240, 240, 240);
     position: absolute;
-    left: 18px;
+
+    left: 50%;
+    transform: translate(-50%, 0);
     top: 6px;
   }
   .circle {
