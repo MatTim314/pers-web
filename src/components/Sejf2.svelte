@@ -1,13 +1,13 @@
 <script>
   let active = false;
   let date = new Date();
+  let targetTime = date.getTime() + 60 * 15 * 1000;
   let ticket = false;
   let time = getCurrentTime();
   let remaining_time = formatTime(5000);
   date.setMinutes(date.getMinutes() - 5);
   let fromDate = formatDate(date);
   date.setMinutes(date.getMinutes() + 20);
-  const targetTime = Date.now() + 60 * 15 * 1000;
   let toDate = formatDate(date);
   let interval = setInterval(() => {
     time = getCurrentTime();
@@ -61,6 +61,15 @@
   function show_ticket() {
     //ticket = true;
     ticket = !ticket;
+  }
+
+  function reset() {
+    date = new Date();
+    targetTime = date.getTime() + 60 * 15 * 1000;
+    date.setMinutes(date.getMinutes() - 5);
+    fromDate = formatDate(date);
+    date.setMinutes(date.getMinutes() + 20);
+    toDate = formatDate(date);
   }
 
   function formatDate(date) {
@@ -203,7 +212,7 @@
         <div class="dots" />
         <div class="left_circle circle" />
       </div>
-      <div class="buy">
+      <div class="buy" on:click={reset} on:keydown={reset}>
         <span>Buy again</span>
       </div>
     </div>
@@ -467,6 +476,7 @@
   }
 
   .buy {
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -479,5 +489,9 @@
     color: white;
     background-color: rgb(218, 0, 25);
     margin-top: 1rem;
+  }
+
+  .buy:hover {
+    background-color: rgb(120, 0, 14);
   }
 </style>
