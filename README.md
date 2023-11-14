@@ -1,11 +1,9 @@
-# My tiny corner of the internet
+# My personal website
 
 It has:
 - Cool design
-- Smooth animations
 - Useful information
 - My portfolio
 - Downloadable CV
-- And much more...
 
-
+Feel free to contact me about collaborating on website design, entire front-end or any Svelte or React project.
