@@ -28,6 +28,7 @@
     "@types/uuid": "^9.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.0.26"
+    "storybook": "^7.0.26",
+    "svelte-copy": "^1.4.1"
   }
 }
