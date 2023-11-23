@@ -36,13 +36,13 @@
   let oneHourMore = formatHour(date)
   let formatedDate = formatDate(date)
   let randomChars = getRandomCharacterString(8)
-  let textValue = `DPMK, a.s. SMS prestupny CL 1,50 EUR Platnost od ${formatedDate} ${currentTime} do ${oneHourMore} hod. ${randomChars}`
+  let textValue = `DPMK, a.s.\nSMS prestupny CL 1,50 EUR\nPlatnost od ${formatedDate} ${currentTime} do ${oneHourMore} hod.\n${randomChars}`
   function copy() {
     navigator.clipboard.writeText(textValue)
 }
 function renew(){
   let randomChar = getRandomCharacterString(8)
-  textValue = `DPMK, a.s. SMS prestupny CL 1,50 EUR Platnost od ${formatedDate} ${currentTime} do ${oneHourMore} hod. ${randomChar}`
+  textValue = `DPMK, a.s.\nSMS prestupny CL 1,50 EUR\nPlatnost od ${formatedDate} ${currentTime} do ${oneHourMore} hod.\n${randomChar}`
   return textValue
 }
 </script>
