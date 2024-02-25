@@ -14,6 +14,19 @@
     remaining_time = formatTime(getRemainingTime(date));
   }, 1000);
 
+  const params = new URLSearchParams(window.location.search);
+  const speedStr = params.get("speed"); // Get the speed parameter as a string
+
+  // Convert the speed parameter to an integer
+  const speed = speedStr ? parseInt(speedStr, 10) : null;
+  console.log(speed);
+  if (speed && !isNaN(speed)) {
+    document.documentElement.style.setProperty("--speed", speed / 10 + "s");
+    console.log("succes parsing");
+  } else {
+    console.log("The speed parameter is not a valid integer");
+  }
+
   function getRemainingTime(movedDate) {
     const currentTime = Date.now();
     const remainingTime = targetTime - currentTime;
@@ -227,6 +240,7 @@
     --border-color: rgba(240, 240, 240, 0.5);
     --border-width: 0.5px;
     font-family: "Inter", sans-serif;
+    --speed: 1;
   }
   header {
     background-color: white;
@@ -463,7 +477,7 @@
   .code_time {
     color: rgb(184, 7, 31);
     font-weight: 500;
-    animation: moveLeftRight 0.5s linear infinite;
+    animation: moveLeftRight var(--speed) linear infinite;
     position: relative;
   }
   @keyframes moveLeftRight {
