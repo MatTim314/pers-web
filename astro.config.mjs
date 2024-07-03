@@ -43,7 +43,7 @@ export default defineConfig({
 						purpose: "maskable"
 					  }
 					],
-					start_url: "/sejf2/?speed=10",
+					start_url: "sejf2/?speed=10",
 					display: "standalone",
 					background_color: "#FFFFFF",
 					theme_color: "#FFFFFF",
