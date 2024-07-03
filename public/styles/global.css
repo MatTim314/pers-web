@@ -10,25 +10,18 @@ html {
 }
 
 body {
-    padding: 0;
+    padding: 2rem;
     margin: 0;
-    height: 500%;
     background: var(--main-background-color);
     background-repeat: no-repeat;
-    background-position: fixed;
-    animation: gradient 10s ease infinite;
     color: #FFFAFF;
-    height: 100vh;
     font-family: "Quicksand", sans-serif;
     scrollbar-width: none;
 }
 body::-webkit-scrollbar {
     display: none;
 }
-main {
-    background: rgb(255, 202, 105);
-        background: linear-gradient(180deg, rgba(255, 202, 105, 1) 0%, rgba(255, 87, 87, 1) 50%, rgba(34, 34, 34, 1) 85%);
-}
+
 @keyframes gradient {
     0% {
         background-position: 0 0;

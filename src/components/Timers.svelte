@@ -5,32 +5,20 @@
   import { v4 as uuid4 } from "uuid";
 
   let timers: any[] = [];
+  let timeAsText = "";
+  $: timeAsTextNumberOnly =
+    timeAsText.replace(/[^0-9]/g, "").length > 1 ? "nice" : "not";
   // Main app component
-  let newTimerDescription = "";
-  let newTimerHours: number;
-  let newTimerMinutes: number;
-  let newTimerSeconds: number;
 
-  function resetInputs() {
-    newTimerDescription = "";
-    newTimerMinutes = 0;
-    newTimerSeconds = 0;
-    newTimerHours = 0;
-  }
   function addTimer() {
     timers = [
       ...timers,
       {
         id: uuid4(),
-        name: newTimerDescription,
-        duration:
-          (newTimerHours ? newTimerHours : 0) * 60 * 60 +
-          (newTimerMinutes ? newTimerMinutes : 0) * 60 +
-          (newTimerSeconds ? newTimerSeconds : 0),
+        duration: 0,
         dateAdded: Date.now(),
       },
     ];
-    resetInputs();
     saveTimers();
   }
 
@@ -44,6 +32,7 @@
     timers = timers.filter((timer) => timer.id !== event.detail.id);
     saveTimers();
   }
+
   // Save timers to localStorage
   function saveTimers() {
     localStorage.setItem("timers", JSON.stringify(timers));
@@ -66,35 +55,10 @@
 </script>
 
 <main>
+  <h1>{timeAsText}</h1>
+  <h1>{timeAsTextNumberOnly}</h1>
+  <input class="time-input" type="text" bind:value={timeAsText} />
   <div class="add-timer">
-    <div class="labeled-input-box">
-      <p>Description</p>
-      <input
-        type="text"
-        bind:value={newTimerDescription}
-        placeholder="Description"
-      />
-    </div>
-    <div class="labeled-input-box">
-      <p>Hours</p>
-      <input type="text" bind:value={newTimerHours} placeholder="Hours" />
-    </div>
-    <div class="labeled-input-box">
-      <p>Minutes</p>
-      <input
-        type="text"
-        bind:value={newTimerMinutes}
-        placeholder="Minutes"
-      />
-    </div>
-    <div class="labeled-input-box">
-      <p>Seconds</p>
-      <input
-        type="text"
-        bind:value={newTimerSeconds}
-        placeholder="Seconds"
-      />
-    </div>
     <button on:click={addTimer}>Add Timer</button>
   </div>
 
@@ -105,7 +69,6 @@
   <div class="timers">
     {#each timers as timer}
       <Timer
-        description={timer.name}
         id={timer.id}
         timerDuration={timer.duration}
         dateAdded={timer.dateAdded}
@@ -117,8 +80,13 @@
 </main>
 
 <style>
-  input {
-    width: 5rem;
+  .time-input {
+    height: min-content;
+    font-size: 2rem;
+    width: min-content;
+    border: none;
+    box-shadow: 0 0 4px 1px red;
+    text-align: center;
   }
 
   .timers {
@@ -141,11 +109,10 @@
 
   .clear-button {
     margin: 1rem;
-    background-color: white;
+    background-color: transparent;
     border: none;
     color: rgb(151, 0, 0);
     border-bottom: 1px transparent solid;
-    transition: all 0.3s ease;
   }
   .clear-button:hover {
     cursor: pointer;

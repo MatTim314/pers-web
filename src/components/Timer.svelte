@@ -1,32 +1,33 @@
 <!-- Timer.svelte -->
 <script lang="ts">
-  import Cross from '../assets/Cross.svelte'
-  import { onMount, onDestroy, createEventDispatcher } from 'svelte';
+  import Cross from "../assets/Cross.svelte";
+  import { onMount, onDestroy, createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 
-  export let description :string;
-  export let id : string;
+  export let id: string;
   export let timerDuration: number; // in seconds
   export let dateAdded: number; // in miliseconds
 
-  let time = Math.floor(( timerDuration * 1000 - (Date.now() - dateAdded)) / 1000);
+  let time = Math.floor(
+    (timerDuration * 1000 - (Date.now() - dateAdded)) / 1000
+  );
 
-  $: hours = Math.floor((time / 60 / 60));
+  $: hours = Math.floor(time / 60 / 60);
   $: minutes = Math.floor((time - hours * 3600) / 60);
-  $: seconds = Math.floor(time % 3600 %60)
-  let interval : number;
+  $: seconds = Math.floor((time % 3600) % 60);
+  let interval: number;
 
-  function removeThis(){
-    dispatch('remove', {
-      id: id
-    })
+  function removeThis() {
+    dispatch("remove", {
+      id: id,
+    });
   }
-  
+
   function startTimer() {
     interval = setInterval(() => {
       time--;
-      if (time <= 0){
-        removeThis()
+      if (time <= 0) {
+        removeThis();
       }
     }, 1000);
   }
@@ -42,16 +43,10 @@
   onDestroy(() => {
     stopTimer();
   });
-
 </script>
 
-<div class='wrap'>
-  
-    {#if !Boolean(description)}
-      {timerDuration} second{#if timerDuration>1}s{/if} timer
-    {:else}
-      <h1>{description} </h1>
-    {/if}
+<div class="wrap">
+  {timerDuration} second{#if timerDuration > 1}s{/if} timer
 
   <span>{hours} hours</span>
   <span>{minutes} minutes</span>
