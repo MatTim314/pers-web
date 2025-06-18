@@ -10,11 +10,12 @@
 </script>
 
 <div class="outer">
-<div class="first-line">
+<!-- <div class="first-line">
     Hi, I'm <span class="name">Matej</span>
   <span class="subtle italic">[mah-tey]</span>
 </div>
-  <p>Nice to meet you</p>
+  <p>Nice to meet you</p> -->
+  <p>Professional keypresser, ceiling starer enthusiast, ocassiona window glancer</p>
 </div>
 
 <style>
@@ -70,7 +71,7 @@
   }
   .outer {
     font-size: 3rem;
-    margin-top: 40vh;
+    margin-top: 30vh;
     margin-bottom: 40vh;
     width: 50%;
   }
