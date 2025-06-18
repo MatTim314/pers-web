@@ -15,7 +15,7 @@
   <span class="subtle italic">[mah-tey]</span>
 </div>
   <p>Nice to meet you</p> -->
-  <p>Professional keypresser, ceiling starer enthusiast, ocassiona window glancer</p>
+  <p>Professional keypresser, ceiling starer enthusiast, ocassional window glancer</p>
 </div>
 
 <style>
