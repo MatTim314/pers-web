@@ -1,0 +1,41 @@
+/* src/styles/global.css */
+:root {
+    --bg-primary: #0b101a;
+    --bg-secondary: #1a202c;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0aec0;
+    --accent-color: #38b2ac; /* Example accent */
+    --font-primary: "Quicksand", system-ui, sans-serif;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+  }
+  
+  /* Reset and base styles */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    /* Styles moved to BaseLayout.astro <style> tag for better control */
+    /* Or keep minimal body styles here if preferred */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+      color: var(--text-primary);
+      font-family: var(--font-primary);
+  }
+  
+  a {
+      color: var(--accent-color);
+      text-decoration: none;
+  }
+  
+  a:hover {
+      text-decoration: underline;
+  }
+  
+  /* Add other global styles */
+  
+  

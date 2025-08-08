@@ -1,42 +1,62 @@
 <script lang="ts">
     import Project from "./Project.svelte";
-</script>
-
-<div class="projects">
-<span class="header">Projects</span >
-<Project 
-      name={"To Build a Fire"}
-      description={"This was a school project done in C++ from scratch using only OpenGL library. Main purpose was to get familiar with rendering methods, lightning models and optimalization. Result was a glooming game about not freezing to death."}
-      imageSource={'/lk.gif'}
-      coverSource={'/fire-cover.png'}
-      link={"https://github.com/MatTim314/to-build-a-fire/tree/main"}/>
-
-      <Project 
-      name={"Acolyte"}
-      description={"Simple side project done in Python using tkinter library. Idea was to simulate playing Dota 2's Invoker hero."}
-      imageSource={'/acolyte.gif'}
-      coverSource={'/acolyte-cover.png'}
-      link={"https://github.com/MatTim314/acolyte"}/>
-
-      <Project 
-      name={"Github GET"}
-      description={"Simple wrapper around Github to extract information about users and their repositories"}
-      imageSource={'/githubget.png'}
-      coverSource={''}
-      link={"https://github.com/MatTim314/github-get"}/>
-    
-</div>
-
-<style>
-    .projects{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
+  
+    // Accept projects array as a prop
+    export let projects: Array<{
+      id: string;
+      name: string;
+      description: string;
+      imageSource: string;
+      coverSource: string;
+      link: string;
+      tags?: string[];
+    }> = [];
+  </script>
+  
+  <div class="projects-container">
+    <span class="header">Projects</span>
+    <div class="projects-list">
+      {#each projects as project (project.id)}
+        <Project
+          name={project.name}
+          description={project.description}
+          imageSource={project.imageSource}
+          coverSource={project.coverSource}
+          link={project.link}
+          tags={project.tags}
+        />
+      {/each}
+    </div>
+  </div>
+  
+  <style>
+    .projects-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Or stretch if you want full width */
+      gap: 2rem; /* Gap between header and list */
+      width: 100%; /* Take full width */
+      margin-top: 4rem; /* Add space above the section */
+      margin-bottom: 4rem; /* Add space below the section */
     }
     .header {
-        
-        font-size: 3rem;
+      font-size: 2.5rem; /* Slightly smaller header */
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #ffffff; /* Brighter header color */
     }
-    
-</style>
+    .projects-list {
+      display: grid; /* Use grid for better alignment */
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive grid */
+      gap: 2rem;
+      width: 100%;
+    }
+  
+    /* Adjust grid for smaller screens */
+     @media (max-width: 900px) {
+       .projects-list {
+          grid-template-columns: 1fr; /* Stack on smaller screens */
+       }
+     }
+  </style>
+  

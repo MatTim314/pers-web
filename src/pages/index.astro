@@ -1,58 +1,18 @@
 ---
-// Component Imports
-import Counter from "../components/Counter.svelte";
-import CvDownload from "../components/CvDownload.svelte";
-import Footer from "../components/Footer.svelte";
+// src/pages/index.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Introduction from "../components/Introduction.svelte";
-import Navigation from "../components/Navigation.svelte";
+import CvDownload from "../components/CvDownload.svelte"; // Can be Astro if not interactive
 import Projects from "../components/Projects.svelte";
+import projectData from "../data/projects"; // Import project data
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+const pageTitle = "Home";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="/styles/global.css" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      html,
-      body {
-        font-family: system-ui;
-        margin: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <Navigation />  
-    <main> 
-      <Introduction client:visible/>
-      <CvDownload />
-      <Projects client:visible/>
-      <Footer />
-    </main>
-  </body>
-  <style is:global>
-
-    main {
-      display: flex;
-      flex-direction: column;
-      gap: 50vh;
-      place-items: center;
-      position: relative;
-      height: 100vh;
-      z-index: -1;
-    }
-
-    
-  </style>
-</html>
+<BaseLayout title={pageTitle} description="Welcome to my personal portfolio.">
+  <!-- Remove the strange main styling from the original index.astro -->
+  <Introduction client:visible />
+  <CvDownload />
+  <!-- Pass project data as a prop -->
+  <Projects projects={projectData} client:visible />
+</BaseLayout>

@@ -1,38 +1,13 @@
 ---
-// Component Imports
-import Footer from "../components/Footer.svelte";
-import Navigation from "../components/Navigation.svelte";
-import ProjectList from "../components/Projects.svelte";
+// src/pages/projects.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectList from "../components/Projects.svelte"; // Reuse the same component
+import projectData from "../data/projects"; // Import project data
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+const pageTitle = "Projects";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="/styles/global.css" />
-    <style>
-      html,
-      body {
-        font-family: system-ui;
-        margin: 0;
-      }
-      body {
-        padding: 2rem;
-      }
-    </style>
-  </head>
-
-  <body>
-    <Navigation />
-    <ProjectList client:visible/>
-    <Footer />
-  </body>
-
-  <style>
-  </style>
-</html>
+<BaseLayout title={pageTitle} description="View my projects.">
+  <h1>My Projects</h1>
+  <ProjectList projects={projectData} client:visible />
+</BaseLayout>

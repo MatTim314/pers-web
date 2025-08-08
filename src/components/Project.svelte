@@ -4,87 +4,129 @@
   export let imageSource: string;
   export let coverSource: string;
   export let link: string;
+  export let tags: string[] | undefined = [];
 
-  function redirect() {
-    window.location.assign(link);
-  }
 </script>
 
-<div
-  class="project"
-  style="cursor: pointer;"
-  on:click={redirect}
-  on:keydown={redirect}
+<!-- Use an anchor tag for semantics and accessibility -->
+<!-- target="_blank" opens in new tab, rel="noopener noreferrer" is for security -->
+<a
+  href={link}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="project-card"
+  aria-label={`View project: ${name}`}
 >
-  <div class="left-side">
+  <div class="image-container">
+    <img class="main-image" src={imageSource} alt={`Preview of ${name}`} />
+    {#if coverSource}
+      <!-- Conditionally render cover -->
+      <img class="cover-image" src={coverSource} alt="" aria-hidden="true" />
+      <!-- aria-hidden as it's decorative -->
+    {/if}
+  </div>
+  <div class="content">
     <span class="name">{name}</span>
-    <span class="description">{description}</span>
+    <p class="description">{description}</p> {#if tags && tags.length > 0}
+      <div class="tags">
+        {#each tags as tag}
+          <span class="tag">{tag}</span>
+        {/each}
+      </div>
+    {/if}
   </div>
-  <div class="right-side">
-    <img src={imageSource} alt="" />
-    <img class="cover" src={coverSource} alt="" />
-  </div>
-</div>
+</a>
 
 <style>
-  .cover {
-    position: absolute;
-    object-position: 0 0;
-  }
-  .cover:hover {
-    opacity: 5%;
-  }
-  .project:hover {
-    transform: translate(0, -3px);
-    background-color: #172033;
-    transition:
-      background-color 150ms ease-in,
-      transform 150ms ease-in-out;
-    box-shadow: 1px 1px 5px black;
-  }
-
-  .project:focus-visible {
-  }
-  .project {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    place-items: stretch;
-    gap: 1rem;
-
-    background-color: #0e131f;
-    border-radius: 10px;
-    width: 50%;
-    cursor: pointer;
-    min-height: 300px;
-  }
-  .description {
-    color: #92828d;
-  }
-  .name {
-    font-size: 2rem;
-    font-family: inherit;
-  }
-  .left-side {
+  .project-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    gap: 5rem;
-    margin: 1rem;
-    padding: 0.5rem;
+    background-color: #1a202c; /* Slightly lighter card background */
+    border-radius: 8px;
+    overflow: hidden; /* Keep image corners rounded */
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit text color */
+    transition:
+      transform 150ms ease-in-out,
+      box-shadow 150ms ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
-  .right-side {
+
+  .project-card:hover,
+  .project-card:focus-visible {
+    /* Apply hover/focus styles */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    outline: 2px solid #4a5568; /* Focus outline */
+    outline-offset: 2px;
+  }
+   .project-card:focus-visible {
+     background-color: #2d3748; /* Slightly different focus background */
+   }
+
+  .image-container {
     position: relative;
-    display: flex;
-    justify-content: center;
-    margin: 1rem;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+    background-color: #2d3748; /* Placeholder background */
   }
-  .right-side > img {
-    flex-shrink: 0;
+
+  .main-image,
+  .cover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    outline: 1px #92828d solid;
-    border-radius: 5px;
-    margin-right: 2rem;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  .cover-image {
+    opacity: 1; /* Cover is initially visible */
+  }
+
+  .project-card:hover .cover-image,
+  .project-card:focus-visible .cover-image {
+    opacity: 0; /* Hide cover on hover/focus */
+  }
+
+  .content {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-grow: 1; /* Allow content to grow if cards have different heights */
+  }
+
+  .name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .description {
+    color: #a0aec0; /* Softer description color */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex-grow: 1; /* Push tags down */
+    margin: 0; /* Remove default paragraph margin */
+  }
+
+  .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto; /* Push tags to the bottom */
+      padding-top: 0.5rem;
+  }
+
+  .tag {
+      background-color: #4a5568; /* Tag background */
+      color: #e2e8f0; /* Tag text color */
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
   }
 </style>

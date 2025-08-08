@@ -1,0 +1,63 @@
+---
+// src/layouts/BaseLayout.astro
+import Navigation from "../components/Navigation.astro"; // Or make Navigation an Astro component
+import Footer from "../components/Footer.svelte";
+import "../styles/global.css"; // Central global styles
+
+interface Props {
+  title: string;
+  description?: string; // Optional description for meta tags
+}
+
+const { title, description = "My Personal Website" } = Astro.props;
+
+const currentYear = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Add other common links/scripts here -->
+    <title>{title} | Your Name</title>
+    <style>
+      /* Minimal base styles if needed, prefer global.css */
+      body {
+        font-family: "Quicksand", system-ui, sans-serif;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #0b101a; /* Example dark background */
+        color: #e0e0e0; /* Example light text */
+      }
+
+      main {
+        flex-grow: 1; /* Ensures main content pushes footer down */
+        padding: 2rem;
+        max-width: 1000px; /* Limit content width for readability */
+        margin: 0 auto; /* Center content */
+        width: 90%;
+      }
+
+      /* Add more base structural styles if necessary */
+    </style>
+  </head>
+  <body>
+    <Navigation /> {/* Use your improved Navigation component */}
+    <main>
+      <slot /> {/* Page content will be injected here */}
+    </main>
+    <Footer /> {/* Pass props if needed */}
+  </body>
+</html>
