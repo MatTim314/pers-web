@@ -212,6 +212,7 @@
 
       </div>
       <div class="divider">
+        <div class="top-border" />
         <div class="right_circle circle" />
         <div class="dots" />
         <div class="left_circle circle" />
@@ -462,12 +463,14 @@
   }
 
   .receipt {
-    align-self: start;
+    align-self: center;
+    width: 90%;
   }
   .link {
     color: black;
     font-weight: 500;
     text-decoration: underline;
+    text-underline-offset: 3px;
   }
   .light {
     font-weight: 400;
@@ -498,9 +501,6 @@
   }
   .lg {
       font-size: 2.2rem;
-  }
-  .ticket_section {
-    padding-left: 1rem;
   }
   .black {
     color: rgb(47, 47, 47);
