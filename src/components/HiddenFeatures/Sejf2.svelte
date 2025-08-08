@@ -1,7 +1,8 @@
 <script>
   let active = false;
+  let fifteen_minutes = 60 * 15 * 1000;
   let date = new Date();
-  let targetTime = date.getTime() + 60 * 15 * 1000;
+  let targetTime = date.getTime() + fifteen_minutes;
   let ticket = false;
   let time = getCurrentTime();
   let remaining_time = formatTime(5000);
@@ -9,8 +10,9 @@
   let fromDate = formatDate(date);
   date.setMinutes(date.getMinutes() + 20);
   let toDate = formatDate(date);
-  let interval = setInterval(() => {
+  setInterval(() => {
     time = getCurrentTime();
+    if (getRemainingTime(date) < 1) {reset();}
     remaining_time = formatTime(getRemainingTime(date));
   }, 1000);
 
@@ -19,13 +21,10 @@
 
   // Convert the speed parameter to an integer
   const speed = speedStr ? parseInt(speedStr, 10) : null;
-  console.log(speed);
   if (speed && !isNaN(speed)) {
     document.documentElement.style.setProperty("--speed", speed / 10 + "s");
-    console.log("succes parsing");
-  } else {
-    console.log("The speed parameter is not a valid integer");
   }
+
 
   function getRemainingTime(movedDate) {
     const currentTime = Date.now();
@@ -78,7 +77,7 @@
 
   function reset() {
     date = new Date();
-    targetTime = date.getTime() + 60 * 15 * 1000;
+    targetTime = date.getTime() + fifteen_minutes;
     date.setMinutes(date.getMinutes() - 5);
     fromDate = formatDate(date);
     date.setMinutes(date.getMinutes() + 20);
