@@ -113,7 +113,7 @@
   >
     chevron_left
   </span>
-  <h2>Public transport ticket{ticket ? " detail" : "s"}</h2>
+  <h3 class="bold">Public transport ticket{ticket ? " detail" : "s"}</h3>
 </header>
 
 <main>
@@ -166,7 +166,7 @@
     <div class="ticket_main">
       <div class="header">
         <span class="ticket_type">Jízdenka přestupní 19 Kč</span>
-        <span class="remaining">Active (remaining {remaining_time})</span>
+        <span class="remaining bold small">Active (remaining {remaining_time})</span>
       </div>
       <div class="divider top-green">
         <div class="green-top top-border" />
@@ -175,37 +175,42 @@
         <div class="left_circle circle" />
       </div>
       <div class="code ticket_section">
-        <span class="code_header light">Transport ticket control code</span>
-        <span class="code_text black"
+        <span class="code_header light small">Transport ticket control code</span>
+        <span class="code_text black bold lg"
           >{getRandomSixDigitNumber()}/{getRandomSixCharacterString()}</span
         >
         <span class="code_time">{time}</span>
       </div>
       <div class="divider">
+          <div class="top-border" />
         <div class="right_circle circle" />
         <div class="dots" />
         <div class="left_circle circle" />
       </div>
       <div class="validity ticket_section black">
-        <div class="valid_box">
-          <div class="valid_from valid_flex">
-            <span class="light">Valid from</span>
-            <span class="bold">{fromDate}</span>
+          <div class="valid_from flex-col">
+            <span class="light small xs-pb">Valid from</span>
+            <span class="bold xm">{fromDate}</span>
           </div>
-          <div class="valid_to valid_flex">
-            <span class="light">Valid to</span>
-            <span class="bold">{toDate}</span>
+          <div class="valid_to flex-col ">
+            <span class="light small xs-pb">Valid to</span>
+            <span class="bold xm">{toDate}</span>
           </div>
-        </div>
-        <div class="valid_flex">
-          <span class="light">City</span>
-          <div class="valid_city">
-            <div class="dpmbicon2">
-              <img class="dpmbimg2" src="/dpmb-icon.png" alt="dpmb icon" />
-            </div>
-            <span class="bold">Brno</span>
+        <div class="flex-col valid_city">
+          <span class="small light xs-pb">City</span>
+          <div class="flex-row">
+              <div class="dpmbicon2">
+                <img class="dpmbimg2" src="/dpmb-icon.png" alt="dpmb icon" />
+              </div>
+              <span class="bold xm">Brno</span>
           </div>
         </div>
+        <div class="flex-col price">
+            <span class="light small xs-pb">Price</span>
+            <span class="bold xm">19,00 CZK</span>
+            <span class="light black small">Including VAT</span>
+          </div>
+
       </div>
       <div class="divider">
         <div class="right_circle circle" />
@@ -213,9 +218,9 @@
         <div class="left_circle circle" />
       </div>
       <div class="receipt ticket_section black">
-        <p class="light">Platí v zónach 100 + 101 mimo vlak</p>
-        <p class="light">
-          Receipt can be downloaded at <span class="link"
+        <p class="bold small">Platí v zónach 100 + 101 mimo vlak</p>
+        <p class="normal small">
+          Download <span class="link bold"
             >smsjizdenky.dpmb.cz</span
           >
         </p>
@@ -239,7 +244,11 @@
     --background-color-ticket: rgb(237, 237, 237);
     --border-color: rgba(240, 240, 240, 0.5);
     --border-width: 0.5px;
-    font-family: "Inter", sans-serif;
+    background-color: var(--background-color);
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      font-style: normal;
     --speed: 1;
   }
   header {
@@ -250,7 +259,7 @@
     align-items: center;
     gap: 1rem;
     padding-left: 1rem;
-    box-shadow: 0 0 10px -3px rgb(171, 171, 171);
+    box-shadow: 0 0 10px -3px rgb(100,100,100);
   }
 
   main {
@@ -310,8 +319,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1rem;
-    height: 1rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     overflow: hidden;
   }
@@ -377,7 +386,6 @@
   }
   .valid {
     color: grey;
-    font-size: x-small;
   }
   .ticket_name {
     font-weight: bold;
@@ -392,7 +400,7 @@
     border-radius: 20px;
     background-color: white;
     overflow: hidden;
-    box-shadow: 0 4px 5px -5px var(--border-color);
+    box-shadow: 0 0px 5px -5px var(--border-color);
   }
   .header {
     display: flex;
@@ -404,49 +412,56 @@
     color: white;
     width: 100%;
     height: 5rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
   .ticket_type {
     font-weight: bold;
-    font-size: 17px;
   }
   .remaining {
     background-color: rgb(1, 70, 0);
     color: rgb(191, 249, 186);
     padding: 5px 10px 5px 10px;
     border-radius: 20px;
-    font-size: 12px;
-    font-weight: 500;
   }
   .code {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
   }
   .validity {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    display: grid;
+    grid-template-areas:
+      "from   to"
+      "price  city";
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
     width: 90%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    padding: 1rem;
   }
-  .valid_box {
-    display: flex;
-    justify-content: space-between;
+
+  .valid_from  { grid-area: from;  justify-self: start; }
+  .valid_to    { grid-area: to;    justify-self: end; align-items: end; }
+  .price       { grid-area: price; justify-self: start; }
+  .valid_city  { grid-area: city;  justify-self: end;  align-items: end; }
+
+  .flex-col {
+      display: flex;
+      flex-direction: column;
   }
-  .valid_city {
-    display: flex;
-    align-items: center;
+  .flex-row {
+      display: flex;
+      flex-direction: row;
   }
-  .valid_flex {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  .valid-box {
+      justify-content: space-between;
   }
-  .valid_to {
-    text-align: right;
-  }
+
   .receipt {
     align-self: start;
   }
@@ -456,20 +471,37 @@
     text-decoration: underline;
   }
   .light {
-    font-weight: 300;
-    font-size: 13px;
+    font-weight: 400;
+  }
+  .normal {
+    font-weight: 500;
   }
   .bold {
-    font-weight: 600;
-    font-size: 17px;
+    font-weight: 700;
+  }
+  .xs-pb{
+      padding-bottom: 0.25rem;
+  }
+  .s-pb{
+      padding-bottom: 0.5rem;
+  }
+  .xs {
+      font-size: 0.4rem;
+  }
+  .small {
+      font-size: 11px;
+  }
+  .xm {
+      font-size: 15px;
+  }
+  .medium {
+      font-size: 1.5rem;
+  }
+  .lg {
+      font-size: 2.2rem;
   }
   .ticket_section {
-    padding: 1rem;
-  }
-  .code_text {
-    font-weight: bold;
-    font-size: 2rem;
-    font-family: "Inter", sans-serif;
+    padding-left: 1rem;
   }
   .black {
     color: rgb(47, 47, 47);
