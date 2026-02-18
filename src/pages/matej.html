@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ing. Matej Timár - CV</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0.75rem;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #485fc7;
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 2rem;
+      }
+      .timeline-marker {
+        position: absolute;
+        left: -2.25rem;
+        top: 0.25rem;
+        width: 12px;
+        height: 12px;
+        background: #485fc7;
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 0 0 3px #485fc7;
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #485fc7 0%, #3a56b0 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <section class="hero hero-gradient is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title is-1 has-text-white">Ing. Matej Timár</h1>
+          <h2 class="subtitle is-4 has-text-white-light">
+            Fullstack Developer
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="section py-4 has-background-light">
+      <div class="container">
+        <div class="level is-mobile">
+          <div class="level-item has-text-centered">
+            <span class="icon has-text-primary"
+              ><i class="fas fa-envelope"></i
+            ></span>
+            <span class="ml-2">matej.timar@gmail.com</span>
+          </div>
+          <div class="level-item has-text-centered">
+            <span class="icon has-text-primary"
+              ><i class="fas fa-map-marker-alt"></i
+            ></span>
+            <span class="ml-2">Brno, Czech Republic</span>
+          </div>
+          <div class="level-item has-text-centered">
+            <span class="icon has-text-primary"
+              ><i class="fab fa-linkedin"></i
+            ></span>
+            <span class="ml-2">linkedin.com/in/matejtimar</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="container my-6">
+      <div class="columns">
+        <!-- Main Content -->
+        <div class="column is-8">
+          <!-- Summary -->
+          <!--<section class="box mb-5">
+            <h3 class="title is-4 has-text-primary">Profil</h3>
+            <p class="content">
+              Skúsený fullstack developer so zameraním na distribuované systémy. Prax v Red Hat a akademickom výskume s
+              dôrazom na škálovateľné riešenia.
+            </p>
+          </section>-->
+
+          <!-- Work Experience -->
+          <section class="box mb-5">
+            <h3 class="title is-4 has-text-primary mb-4">
+              Pracovné skúsenosti
+            </h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-5">Freelance Fullstack Developer</p>
+                        <p class="subtitle is-6 has-text-primary">
+                          2025 - súčasnosť
+                        </p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <p>
+                        Nezávislý vývojár webových aplikácií a cloudových
+                        riešení.
+                      </p>
+                      <ul style="margin-top: 0.5rem">
+                        <li>
+                          Fullstack vývoj v React/TypeScript a Spring Boot
+                        </li>
+                        <li>CI/CD pipeline automation</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-5">
+                          Programátor centra pre distribuované výpočty
+                        </p>
+                        <p class="subtitle is-6 has-text-primary">
+                          2023 - 2025
+                        </p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <p>Ústav výpočetní techniky, Masarykova univerzita</p>
+                      <ul style="margin-top: 0.5rem">
+                        <li>Vývoj systémov pre high-performance computing</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-5">Intern</p>
+                        <p class="subtitle is-6 has-text-primary">
+                          2022 - 2023
+                        </p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <p>Red Hat, Brno</p>
+                      <ul style="margin-top: 0.5rem">
+                        <li>Práca na open-source projektoch</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="column is-4">
+          <!-- Education -->
+          <section class="box mb-5">
+            <h3 class="title is-5 has-text-primary">
+              <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+              <span class="ml-2">Vzdelanie</span>
+            </h3>
+            <div class="block">
+              <p class="has-text-weight-semibold">Ing. - Fakulta informatiky</p>
+              <p class="is-size-7">Masarykova univerzita, Brno</p>
+            </div>
+            <div class="block">
+              <p class="has-text-weight-semibold">Bc. - Fakulta informatiky</p>
+              <p class="is-size-7">Masarykova univerzita, Brno</p>
+            </div>
+          </section>
+
+          <!-- Skills -->
+          <section class="box mb-5">
+            <h3 class="title is-5 has-text-primary">
+              <span class="icon"><i class="fas fa-code"></i></span>
+              <span class="ml-2">Technické zručnosti</span>
+            </h3>
+            <div class="content">
+              <p class="has-text-weight-semibold mb-2">Programovanie:</p>
+              <div class="tags">
+                <span class="tag is-dark">TypeScript</span>
+                <span class="tag is-dark">Python</span>
+                <span class="tag is-dark">Java</span>
+              </div>
+              <!--<p class="has-text-weight-semibold mb-2">Technológie:</p>
+              <div class="tags">
+                <span class="tag is-info">React</span>
+                <span class="tag is-info">Docker</span>
+              </div>-->
+              <p class="has-text-weight-semibold mb-2">Jazyky:</p>
+              <div class="tags">
+                <span class="tag is-success">Slovenčina</span>
+                <span class="tag is-success">Čeština</span>
+                <span class="tag is-success">Angličtina</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <!--<footer class="footer has-background-light">
+      <div class="content has-text-centered">
+        <p class="is-size-7">
+          Vygenerované pomocou Bulma CSS |
+          <a href="mailto:matej.timar@email.com">matej.timar@email.com</a>
+        </p>
+      </div>
+    </footer>-->
+  </body>
+</html>
