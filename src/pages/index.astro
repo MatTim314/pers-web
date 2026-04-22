@@ -12,6 +12,7 @@ const pageTitle = "Home";
 <BaseLayout title={pageTitle} description="Welcome to my personal portfolio.">
   <!-- Remove the strange main styling from the original index.astro -->
   <Introduction client:visible />
+<p>If you want peace, be prepared for war.</p>
   <CvDownload />
   <!-- Pass project data as a prop -->
   <Projects projects={projectData} client:visible />

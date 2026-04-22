@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>whishlist</title>
+    <link rel="stylesheet" href="../styles/bulma.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <script>
+    const
+      for (
+        let i = 0;
+        i < document.getElementsByClassName("price").length;
+        i += 1
+      ) {
+        final_price.innerText =
+          parseInt(final_price.innerText) +
+          parseInt(document.getElementsByClassName("price").item(i).innerText);
+      }
+  </script>
+  <body>
+    <div class="section">
+      <div class="title has-text-info" id="final_price">0</div>
+    </div>
+    <ul>
+      <li>
+        <h1 class="title">Laptop</h1>
+        <h2 class="subtitle">Price: <b class="price">2000</b> Eur</h2>
+        <p>
+          Framework laptop. Either 13" or 16", leaning more towards 13" since I
+          don't need to game on it, but I need something to bring to work.
+          Extension sockets make it easy to plugin anywhere, usefull in the
+          field.
+        </p>
+      </li>
+      <li>
+        <h1 class="title">Camera</h1>
+        <h2 class="subtitle">Price: <b class="price">1000</b> Eur</h2>
+        <p>
+          I'm feeling a mid size DSLR. It's always been fun to fuck around with
+          a camera and I'd like something versatile.
+        </p>
+      </li>
+      <li>
+        <h1 class="title">Good climbing shoes</h1>
+        <h2 class="subtitle">Price: <b class="price">200</b> Eur</h2>
+        <p>
+          Nothing against my stolen ones, but any serious climbing suffers
+          because of them.
+        </p>
+      </li>
+      <li>
+        <h1 class="title">Monitor</h1>
+        <h2 class="subtitle">Price: <b class="price">400</b> Eur</h2>
+        <p>
+          I'm not even sure what state my old one is, but a nice monitor could
+          go a long way.
+        </p>
+      </li>
+    </ul>
+    <!-- Header -->
+    <section class="hero hero-gradient is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title is-1 has-text-white">Ing. Lucia Helmeciová</h1>
+          <h2 class="subtitle is-4 has-text-white-light">
+            Bioinformatik & Softvérový inžinier
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="section py-4 has-background-light">
+      <div class="container">
+        <div class="level is-mobile">
+          <div class="level-item has-text-centered">
+            <span class="icon has-text-primary"
+              ><i class="fas fa-envelope"></i
+            ></span>
+            <span class="ml-2">lucia.helmeci@gmail.com</span>
+          </div>
+          <div class="level-item has-text-centered">
+            <span class="icon has-text-primary"
+              ><i class="fas fa-map-marker-alt"></i
+            ></span>
+            <span class="ml-2">Brno, ČR</span>
+          </div>
+          <!--<div class="level-item has-text-centered">
+            <span class="icon has-text-primary"
+              ><i class="fab fa-linkedin"></i
+            ></span>
+            <span class="ml-2">linkedin.com/in/luciahelmeciova</span>
+          </div>-->
+        </div>
+      </div>
+    </section>
+
+    <main class="container my-6">
+      <div class="columns">
+        <!-- Main Content -->
+        <div class="column is-8">
+          <!-- Summary -->
+          <!--<section class="box mb-5">
+            <h3 class="title is-4 has-text-primary">Profil</h3>
+            <p class="content">
+              Špecialistka v oblasti bioinformatiky a vývoja softvéru s
+              multidisciplinárnym vzdelaním v IT a umelej inteligencii.
+              Skúsenosti z akademického výskumu aj priemyslu.
+            </p>
+          </section>-->
+
+          <!-- Work Experience -->
+          <section class="box mb-5">
+            <h3 class="title is-4 has-text-primary mb-4">
+              Kariérne skúsenosti
+            </h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-5">
+                          Výskumník v Bioinformatike & Freelance Programátor
+                        </p>
+                        <p class="subtitle is-6 has-text-primary">
+                          2024 - súčasnosť
+                        </p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <p class="has-text-weight-semibold">
+                        Masarykova univerzita (spolupráca)
+                      </p>
+                      <p>
+                        Výskum v oblasti biologických dát a analytických metód.
+                      </p>
+
+                      <p class="has-text-weight-semibold mt-3">
+                        Nezávislý vývojár
+                      </p>
+                      <p>Projektový vývoj softvéru na mieru pre klientov.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-5">Programátor</p>
+                        <p class="subtitle is-6 has-text-primary">
+                          2023 - 2024
+                        </p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <p>Masarykova univerzita</p>
+                      <ul style="margin-top: 0.5rem">
+                        <li>Vývoj interných akademických systémov, Moodle</li>
+                        <li>Administrátor Linuxu</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-5">Software Engineer Intern</p>
+                        <p class="subtitle is-6 has-text-primary">
+                          2022 - 2023
+                        </p>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <p>Thermo Fisher Scientific</p>
+                      <ul style="margin-top: 0.5rem">
+                        <li>
+                          Spolupráca pri vývoji grafického rozhrania
+                          elektrónových mikroskopov
+                        </li>
+                        <li>Spolupráca na medzinárodných projektoch</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="column is-4">
+          <!-- Education -->
+          <section class="box mb-5">
+            <h3 class="title is-5 has-text-primary">
+              <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+              <span class="ml-2">Vzdelanie</span>
+            </h3>
+            <div class="block">
+              <p class="has-text-weight-semibold">Ing. - Umelá inteligencia</p>
+              <p class="is-size-7">Technická univerzita Košice</p>
+            </div>
+            <div class="block">
+              <p class="has-text-weight-semibold">Bc. - Informatika</p>
+              <p class="is-size-7">Masarykova univerzita, Brno</p>
+            </div>
+          </section>
+
+          <!-- Skills -->
+          <section class="box mb-5">
+            <h3 class="title is-5 has-text-primary">
+              <span class="icon"><i class="fas fa-brain"></i></span>
+              <span class="ml-2">Kľúčové kompetencie</span>
+            </h3>
+            <div class="content">
+              <p class="has-text-weight-semibold mb-2">Technológie:</p>
+              <ul>
+                <li>Vývoj webových aplikácií</li>
+                <li>Práca s biologickými dátami</li>
+                <li>Machine Learning & AI</li>
+                <li>Databázové systémy</li>
+              </ul>
+
+              <p class="has-text-weight-semibold mb-2 mt-4">Jazyky:</p>
+              <ul>
+                <li>Slovenčina (rodný)</li>
+                <li>Čeština (pokročilá)</li>
+                <li>Angličtina (C1)</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Interests -->
+          <section class="box mb-5">
+            <h3 class="title is-5 has-text-primary">
+              <span class="icon"><i class="fas fa-heart"></i></span>
+              <span class="ml-2">Záujmy</span>
+            </h3>
+            <div class="content">
+              <p>
+                Vedecký výskum, biológia, turistika, športové lezenie, Bali
+                <span class="icon"><i class="fas fa-heart"></i></span>
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <!--<footer class="footer has-background-light">
+      <div class="content has-text-centered">
+        <p class="is-size-7">
+          Vygenerované pomocou Bulma CSS |
+          <a href="mailto:lucia.helmeciova@email.com"
+            >lucia.helmeciova@email.com</a
+          >
+        </p>
+      </div>
+    </footer>-->
+  </body>
+</html>
