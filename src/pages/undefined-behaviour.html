@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Undefined behaviour - blog</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+</head>
+
+<body>
+
+  <div class="section">
+    <ul>
+      <li>
+        <h1 class="title">Map CAPS LOCK to CTRL on hold and to ESC on tap on NixOS</h1>
+        <h2 class="subtitle">No kanata needed</h2>
+        <div class="content">
+
+          Put this into your <code>configuration.nix</code> file. This is layout neutral.
+          <pre>
+            <code class="language-nix">
+              services.interception-tools =
+              let
+              itools = pkgs.interception-tools;
+              itools-caps = pkgs.interception-tools-plugins.caps2esc;
+              in
+              {
+              enable = true;
+              plugins = [ itools-caps ];
+              # requires explicit paths: https://github.com/NixOS/nixpkgs/issues/126681
+              udevmonConfig = pkgs.lib.mkDefault ''
+              - JOB: "${itools}/bin/intercept -g $DEVNODE | ${itools-caps}/bin/caps2esc -m 1 | ${itools}/bin/uinput -d
+              $DEVNODE"
+              DEVICE:
+              EVENTS:
+              EV_KEY: [KEY_CAPSLOCK, KEY_ESC]
+              '';
+              };
+            </code>
+          </pre>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</body>
+
+</html>
