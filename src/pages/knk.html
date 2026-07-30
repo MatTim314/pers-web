@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalkulačka zisku</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+</head>
+
+<body>
+  <section class="section">
+    <div class="container" style="max-width: 600px">
+
+      <div class="box">
+        <div class="field">
+          <label class="label">
+            Cena vstupu:
+            <span id="priceValue" class="has-text-weight-bold"></span>
+          </label>
+          <div class="control">
+            <input id="price" class="slider is-fullwidth" type="range" min="10" max="500" step="10" value="150" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">
+            Počet vstupov za deň:
+            <span id="countValue" class="has-text-weight-bold"></span>
+          </label>
+          <div class="control">
+            <input id="count" class="slider is-fullwidth" type="range" min="1" max="24" step="1" value="15" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">
+            Vyťaženosť:
+            <span id="utilValue" class="has-text-weight-bold"></span>
+          </label>
+          <div class="control">
+            <input id="util" class="slider is-fullwidth" type="range" min="0" max="100" step="1" value="70" />
+          </div>
+        </div>
+      </div>
+
+      <div class="box has-background-primary-light">
+        <p class="is-size-5">
+          Zisk za deň:
+          <strong id="dayProfit"></strong>
+        </p>
+        <p class="is-size-5">
+          Zisk za mesiac:
+          <strong id="monthProfit"></strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const price = document.getElementById("price");
+    const count = document.getElementById("count");
+    const util = document.getElementById("util");
+
+    const fmt = new Intl.NumberFormat("sk-SK", {
+      style: "currency",
+      currency: "CZK",
+    });
+
+    function calculate() {
+      const p = parseFloat(price.value);
+      const c = parseInt(count.value);
+      const u = parseFloat(util.value) / 100;
+
+      priceValue.textContent = fmt.format(p);
+      countValue.textContent = c;
+      utilValue.textContent = (u * 100).toFixed(2) + " %";
+
+      const day = p * c * u;
+      dayProfit.textContent = fmt.format(day);
+      monthProfit.textContent = fmt.format(day * 30);
+    }
+
+    [price, count, util].forEach((el) =>
+      el.addEventListener("input", calculate)
+    );
+    calculate();
+  </script>
+</body>
+
+</html>

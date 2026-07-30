@@ -1,0 +1,47 @@
+---
+// src/pages/nav.astro
+const pages = await Astro.glob('./**/*.{astro,md,mdx,html}');
+
+const links = pages
+.filter((p) => p.url && !p.url.includes('[') && p.url !== '/nav')
+.map((page) => ({
+url: page.url,
+label:
+page.frontmatter?.title ??
+(page.url === '/'
+? 'Home'
+: page.url.split('/').filter(Boolean).pop().replace(/-/g, ' ')),
+}))
+.sort((a, b) => a.url.localeCompare(b.url));
+---
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site navigation</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+</head>
+
+<body>
+  <section class="section">
+    <div class="container" style="max-width: 600px">
+      <h1 class="title">All pages</h1>
+      <div class="box">
+        <ul>
+          {
+          links.map((link) => (
+          <li>
+            <a href={link.url}>{link.label}</a>
+            <span class="has-text-grey is-size-7"> ({link.url})</span>
+          </li>
+          ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
