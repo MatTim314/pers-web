@@ -1,0 +1,3 @@
+- [ ] Zistiť ako prenášať súbory medzi dvoma PC na tej istej lokálnej sieti
+- [ ] Naučiť sa čítať grécku abecedu, len tak, z piče
+- [ ] Pred indonéziou si vybrať klávesnicu predtým než dostanem karpálny tunel. Dobrá klávesnica je zodpovedná za väčšinu pohodlia pri programovaní, na druhom mieste je pravdepodobne monitor.

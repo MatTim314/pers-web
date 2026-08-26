@@ -1,0 +1,15 @@
+Apps I need for basic survival:
+- Datagrip, InteliJ (Jetbrains)
+- Vim
+- Zed
+- tmux
+- kitty
+- flameshot
+- ssh keys and shit
+- wifi, bluetooth, displays, brightness, audio input/output/volume settings
+- vlc
+- oculante (img viewer)
+- Markdown viewer/editor
+- Obsidian
+- nice system bar
+- wm like sway

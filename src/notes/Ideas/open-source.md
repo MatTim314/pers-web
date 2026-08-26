@@ -1,0 +1,2 @@
+- [ ] [jq](https://jqlang.org/manual/#builtin-operators-and-functions) has currently support for only one timeformat, ISO8601, support for other time formats is in the future, possibly good entry into open source contributing
+- [ ] rust pretty terminal based RSS reader

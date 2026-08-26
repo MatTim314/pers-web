@@ -1,0 +1,5 @@
+- Knižnica Jána Boccatia na KVP ako coworking space
+- Vymyslieť ako by sa dalo hrať Wasteland od Woodkida na gytare
+- Precvičiť si hranie Ezra Bell na gytare
+- Nakresliť moju predstavu monštra zo sna
+- Vytvoriť tréningový plán na Toji Fushiguro physique

@@ -1,0 +1,23 @@
+2026-06-09, 10, wms zjednotenie tabuliek, zle nacitavanie EAN kodov, vypadok nacitavania v sklade
+2026-06-10, 8, pridanie predajností a lokácie do tabuľky, dizajnové úpravy pre wms, zobrazovanie chýb pri načítaní EANov, skenovanie objednávok nezasahuje do WMS
+2026-06-11, 0, volny den
+2026-06-12, 10, hlasenie incidentov, dodatky ku tabulky, oprava image servisy
+2026-06-13, 8, image service opravy
+2026-06-15, 10, hlasenie incidentov
+2026-06-16, 0, volny den
+2026-06-17, 10, hlasenie chyb-odovzdanie, vyhladavanie v tabulke velkosti
+2026-06-18, 8, nasadenie zmien v tabulke, oprava nazvov obrazkov v db
+2026-06-19, 4, default radenie v tabulke, spojazdnenie tlace stitkov
+2026-06-20, 6, napojenie hlasenia zmien na discord
+2026-06-21, 4, oprava pomalej inventury, lepsia stylizacia wms
+2026-06-22, 7, opravovanie tabulky a opravy dvoch hlásení, chyba #84
+2026-06-23, 7, chyba #86 a #88 
+2026-06-24, 7, tabulka predajnosti po kliknuti na momentalnu predajost, oprava gramatiky
+2026-06-25, 6, štatistiky skladov
+2026-06-26, 3, štatistiky skladov
+2026-06-27, 0, volno
+2026-06-28, 0, TODO: štatistiky
+2026-06-30, 3, štatistiky skladov
+2026-07-01, 5, štatistiky skladov
+
+

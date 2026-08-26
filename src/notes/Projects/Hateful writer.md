@@ -1,0 +1,2 @@
+**Description**
+> SPA web with a single line for input. Every space in writing saves the current word and empties the buffer. Words will start appearing in the background in a disorderly fashion, continuing to fill the screen. Words will also change their font height based on the frequency of their usage, tho this effect should be reserved for words which carry some meaning. Graphics are optional.

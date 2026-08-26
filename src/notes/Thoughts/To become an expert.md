@@ -1,0 +1,4 @@
+- [ ] Valid environment
+- [ ] Many repetitions
+- [ ] Timely feedback
+- [ ] Deliberate practice

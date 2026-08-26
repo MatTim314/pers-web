@@ -1,0 +1,47 @@
+---
+// src/pages/notes.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { noteSlug } from '../utils/slugify';
+
+const notes = await Astro.glob('../notes/**/**/*.md');
+
+const links = notes
+  .map((note) => ({
+    slug: noteSlug(note.file),
+    label: note.frontmatter?.title ?? noteSlug(note.file).replace(/-/g, ' '),
+  }))
+  .sort((a, b) => a.label.localeCompare(b.label));
+---
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+</head>
+
+<BaseLayout title= "notes" description="Welcome to my personal portfolio.">
+  <!-- Remove the strange main styling from the original index.astro -->
+<body>
+  <section class="section">
+    <div class="container" style="max-width: 600px">
+      <h1 class="title">Notes</h1>
+      <div class="content">
+        <ul>
+          {
+            links.map((link) => (
+              <li>
+                <a href={`/notes/${link.slug}`}>{link.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+</body>
+
+</BaseLayout>
+</html>

@@ -8,12 +8,11 @@ import projectData from "../data/projects"; // Import project data
 
 const pageTitle = "Home";
 ---
-
-<BaseLayout title={pageTitle} description="Welcome to my personal portfolio.">
-  <!-- Remove the strange main styling from the original index.astro -->
-  <Introduction client:visible />
-<p>If you want peace, be prepared for war.</p>
-  <CvDownload />
-  <!-- Pass project data as a prop -->
-  <Projects projects={projectData} client:visible />
-</BaseLayout>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+</head>
+<section class="section">
+<a href="/nav">
+<img height="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.tourismato.cz%2Ffoto%2Frozcestnik-udoli-peklo-313966.jpg&f=1&nofb=1&ipt=49041a8ad8a18910749a6cc7877193da30a5cf2bfde469d8faf0a3fb175c658b"></img>
+</a>
+</section>

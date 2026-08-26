@@ -1,0 +1,8 @@
+- [x] Vždy keď sa udeje refund pridať nový refund záznam do refunds repository
+- [x] Spraviť endpoint ktorý si vypýta refunds ku konkrétnej objednávke
+- [x] Na frontende v  momente fetchnutia konkrétnej objednávky, fetchnúť aj údaje z refund repozitára ku danej objednávke
+- [x] Vypísať tieto údaje o refunde objednávky ako zoznam na frontende v opačnom prípade vypísať že objednávka nemá žiadne refunds
+- [x] Pridať jednej objednávke umelý refund priamo v repozitári a pozrieť sa či sa zobrazí na frontende
+	- [x] Predtým treba pushnúť aspoň backendové zmeny
+- [ ] Pocommitovať a pushnúť zmeny
+- [ ] Vytvoriť testy pre RefundRepository

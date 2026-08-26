@@ -1,8 +1,9 @@
 ---
-// src/pages/nav.astro
-const pages = await Astro.glob('./**/*.{astro,md,mdx,html}');
+import { noteSlug } from '../utils/slugify';
 
-const links = pages
+const pages = await Astro.glob('../**/*.{astro,md,mdx,html}');
+
+const p_links = pages
 .filter((p) => p.url && !p.url.includes('[') && p.url !== '/nav')
 .map((page) => ({
 url: page.url,
@@ -13,6 +14,17 @@ page.frontmatter?.title ??
 : page.url.split('/').filter(Boolean).pop().replace(/-/g, ' ')),
 }))
 .sort((a, b) => a.url.localeCompare(b.url));
+
+
+
+const notes = await Astro.glob('../notes/*.md');
+
+const links = notes
+  .map((note) => ({
+    slug: noteSlug(note.file),
+    label: note.frontmatter?.title ?? noteSlug(note.file).replace(/-/g, ' '),
+  }))
+  .sort((a, b) => a.label.localeCompare(b.label));
 ---
 
 <html lang="en">
@@ -28,10 +40,10 @@ page.frontmatter?.title ??
   <section class="section">
     <div class="container" style="max-width: 600px">
       <h1 class="title">All pages</h1>
-      <div class="box">
+      <div class="content">
         <ul>
           {
-          links.map((link) => (
+          p_links.map((link) => (
           <li>
             <a href={link.url}>{link.label}</a>
             <span class="has-text-grey is-size-7"> ({link.url})</span>
@@ -41,7 +53,20 @@ page.frontmatter?.title ??
         </ul>
       </div>
     </div>
+    <div class="container" style="max-width: 600px">
+      <h1 class="title">Notes</h1>
+      <div class="content">
+        <ul>
+          {
+            links.map((link) => (
+              <li>
+                <a href={`/notes/${link.slug}`}>{link.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
   </section>
 </body>
-
 </html>

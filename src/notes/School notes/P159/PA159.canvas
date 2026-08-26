@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"82567d224c8d2665","type":"file","file":"Ipv6 address abbreviation.png","x":-320,"y":-245,"width":400,"height":155},
+		{"id":"88a5a64d3a0cbb0d","type":"text","text":"# Addresses:\n128 bits, omitting leading zeros, **first** zero group can be neglected\nTypes: \nunicast, \nmulticast ***ff00::***,\nanycast","x":-713,"y":-239,"width":253,"height":279},
+		{"id":"bf0302dca6fb09af","type":"text","text":"# Why IPv6\n- Not enough IPv4 addresses\n- No security\n- No mobility\n- No real-time apps support\n\n- Simpler header\n- Extension header\n- Real-time\n- Security\n- Mobility - home agents\n- Autoconfiguration\n\n\n\n","x":-777,"y":-680,"width":377,"height":381},
+		{"id":"4035b6aa4358edb5","type":"file","file":"Pasted image 20231209162440.png","x":-320,"y":-588,"width":400,"height":198},
+		{"id":"9a3a2eab3784bf31","type":"file","file":"Ipv6 address composition.png","x":-786,"y":100,"width":399,"height":38},
+		{"id":"351a5eb329821f22","type":"text","text":"# Packets\n- Fragmentation not allowed, only on end points\n- Path MTU discovery = figure out the need for fragmentation by sending a request and if it works it works if it doesnt fragment ","x":-829,"y":228,"width":489,"height":212},
+		{"id":"e2406d53336d41b6","type":"text","text":"#  Neighbor discovery\nMade up of :\n- RS - router solicitation\n- RA - router advertisement\n- NS - neighbor S\n- NA - neighbor A\n- ICMP redirect\n\n","x":-291,"y":224,"width":491,"height":282},
+		{"id":"2329a9e3239640d5","type":"text","text":"FF02:0:0:0:0:1:FF00::/104","x":380,"y":274,"width":279,"height":60},
+		{"id":"5db60cbf7b84f1f0","type":"text","text":"Format","x":380,"y":214,"width":250,"height":60},
+		{"id":"38bf1143ea5aa534","type":"text","text":"IPv6 address\n2AC0:56:A319:15:022A:FFF:FE32:5ED1","x":716,"y":252,"width":398,"height":82},
+		{"id":"e6558f1a41f84b0a","type":"text","text":"# Conversion of IPv6 to L2 address","x":449,"y":138,"width":535,"height":50},
+		{"id":"60bf9058ad931287","type":"text","text":"FF02:0:0:0:0:1:FF32:5ED1:/104","x":520,"y":440,"width":409,"height":66},
+		{"id":"49ff63d77b831130","type":"text","text":"# DAD\n*Imagine you're in a crowded room and someone shouts your name. If no one responds, you know your name is unique in that space.*\n\nSend NS with your address into the space. If no NA respond comes, your IPv6 is unique and you can keep it.","x":-291,"y":760,"width":496,"height":266},
+		{"id":"fadce6d460bc8297","type":"file","file":"School notes/P159/Terms.md","x":305,"y":-689,"width":400,"height":400},
+		{"id":"76cb5f4a29b130ff","type":"text","text":"Ask on this address and recieve all IPv6 addresses of that node along with their L2 addresses","x":-120,"y":580,"width":530,"height":109}
+	],
+	"edges":[
+		{"id":"a96d6de8de7d9f7f","fromNode":"88a5a64d3a0cbb0d","fromSide":"right","toNode":"82567d224c8d2665","toSide":"left"},
+		{"id":"1b4fb4eaec632d31","fromNode":"88a5a64d3a0cbb0d","fromSide":"bottom","toNode":"9a3a2eab3784bf31","toSide":"top"},
+		{"id":"b7799cb50f92d8d5","fromNode":"2329a9e3239640d5","fromSide":"bottom","toNode":"60bf9058ad931287","toSide":"top"},
+		{"id":"efa97f0d24b3cb51","fromNode":"38bf1143ea5aa534","fromSide":"bottom","toNode":"60bf9058ad931287","toSide":"top"},
+		{"id":"81041e8fd1609673","fromNode":"e2406d53336d41b6","fromSide":"right","toNode":"e6558f1a41f84b0a","toSide":"left"},
+		{"id":"5fab6853ee3703b5","fromNode":"76cb5f4a29b130ff","fromSide":"right","toNode":"60bf9058ad931287","toSide":"left"},
+		{"id":"05e7e406ea5e5774","fromNode":"e2406d53336d41b6","fromSide":"bottom","toNode":"76cb5f4a29b130ff","toSide":"top"}
+	]
+}

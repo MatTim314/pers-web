@@ -1,0 +1,2 @@
+- Why am I afraid of saying/doing the wrong thing when I am with my partner? Why am I scared to lose her love by doing something wrong?
+- Is it bad to demand some activities be only between us? If I dont have a motorbike, and she goes on a motorbike trip with her classmate, that makes me feel like im not good enough or that i dont provide enough for her. Are these feelings justified or is it trauma?

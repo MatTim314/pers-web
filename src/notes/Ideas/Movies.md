@@ -1,0 +1,75 @@
+- [x] 20th century women
+- [x] Burn after reading
+- [x] manchester by the sea
+- [x] fantastic mr fox
+- [ ]  banshees of ishenshire
+- [x] drive
+- [ ] portrait of a lady on fire
+- [x] pans labyrinth
+- [x] Three billboards outside Ebbing, Missouri 
+- [ ] la la land
+- [x] The lobster
+- [x] Sicario
+- [ ] Goodfellas
+- [x] Snowpiercer
+- [x] The menu
+- [x] Get out / Us / Nope
+- [x] Spotlight
+- [ ] Fargo
+- [x] Green book
+- [x] Gran torino
+- [x] Whites - series
+- [x] Beautiful boy
+- [ ] Foe
+- [x] Saltburn
+- [x] Poor things - cam only
+- [ ] Killer of the flower moon
+- [x] The holdovers
+- [x] Society of the snow - Plane crash survivor story
+- [x] Wonka
+- [ ] Origin
+- [x] American fiction - cam only 
+- [x] Leave the world behind - slow post-apo
+- [ ] The boy and the heron - ghibli
+- [x] All of us strangers - love, grief and other misnomers
+- [x] Bohemian rhapsody
+- [ ] The gentleman
+- [ ] The talented mr ripley
+- [x] Inside the mind of the cat
+- [x] A quiet place II
+- [x] Past lives
+- [x] Civil warc
+- [x] Evil does not exist
+- [ ] Drive my car
+- [x] Into the Wild
+- [ ] The lunchbox
+- [ ] # Where the Crawdads Sing 
+- [ ] # Perfect Days 2023
+- [ ] # The Judge 2014
+- [x] # The Ministry of Ungentlemanly Warfare 2024
+- [x] # Bones and All 2022
+- [x] # Challengers 2024 
+- [ ] # Badlands 1973
+- [x] _[Hail, Caesar!](https://en.wikipedia.org/wiki/Hail,_Caesar! "Hail, Caesar!")_
+- [ ] https://en.wikipedia.org/wiki/Coen_brothers_filmography
+- [ ] The green knight
+- [ ] imitation game
+- [ ] Chungking express
+- [ ] Paris, Texas (1984)
+	- [ ] Kinds of kindness
+- [x] scavengers reign
+- [x] the bear
+- [x] fallout
+- [ ] birdman
+- [x] # Dallas Buyers Club
+- [ ] # Lady Bird
+- [x] # Dogtooth
+- [ ] # Ripley
+- [x] # The Walking Dead
+- [ ] # Million Dollar Baby
+- [ ] # Longlegs
+- [ ] # Slow Horses
+- [ ] # Black Bird
+- [x] Legion = kinda trash
+- [ ] # Marriage Story
+- [ ] 

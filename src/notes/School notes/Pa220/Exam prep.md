@@ -1,0 +1,19 @@
+- definovat typy faktu a uvest ke kazdemu priklady z car monitoring DWH z domacich uloh
+	- Aggregate fact
+	- Transaction fact 
+	- snapshot fact
+	- cumulative snapshot fact
+	- fact-less fact
+	- consolidated fact
+- definovat ctyri pojmy (business key, surrogate key, degenerate dimension, idk) a uvest priklady k nim z nejake domeny prodeje itemu v chainu obchodu
+- implementovat SCD2 (byla tam napsana jeji definice) na nejakem priklade, popsat jak se zmeni fact a dimension tables
+	- Create valid from, valid to, current_row attributes
+	- When updating records, set current_row to false and set valid to to today
+	- Put in the new record
+- pocitani kolik records vrati query pouzivajici bezne joiny vs. kolik kdyz to prepiseme pomoci cross joinu
+- definice SQL LEAD, psani SQL ktere vytvori nejaky view a potom psani SQL ktere pouzije ten view a LEAD
+- Bottom-Up approach (co to je, výhoda, nevýhoda) 
+- Data-densification (co to je, proč to je) 4 druhy faktů 
+- Materialized View (co to je, použít MV na uvedeném selectu) 
+- Cube a Roll up (rozdíly, popsat na uvedené query) 
+- Rank (kolik řádku vrátí uvedená query, co znamenají hodnoty toho ranku)

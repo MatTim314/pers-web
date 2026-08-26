@@ -1,0 +1,45 @@
+- Fragmentation
+- Neighbor discovery
+- Duplicate Address Detection
+- Neighbor Unreachability Detection
+- Stateless Autoconfiguration [[Stateless autoconfig example]]
+- Statefull autoconfiguration 
+- Mobility support - [[Mobility support]]
+- CIA - Confidentiality, Integrity, Availability
+- AAA - Authentication, Authorization, Accounting
+- Nonrepudation
+- IPSec
+	- Authentication Header
+	- Encapsulating Security Payload
+	- Transport mode
+	- Tunnel mode
+- Security Associations
+- Integrated Services
+- Differentiated services
+	- Traffic class field
+	- Flow label
+- Porting of IPv6, issues with code implementation
+	- Dual stack
+	- Tunneling
+	- Translating
+- Routing
+- Distance Vector
+	- RIP protocol
+	- IGRP/EIGRP
+- Link State
+	- OSPF
+- Path Vector
+	- BGP
+- Autonomous systems
+- Interior/Exterior gateway protocol
+- Router functions
+	- Routing
+	- Packet forwarding
+- Lookup speed
+	- Wire speed processing
+- Shortest path first
+- Traffic engineering
+	- Simple network management protocol
+	- NetFlow
+Multiprotocol label switching
+Label distribution protocol

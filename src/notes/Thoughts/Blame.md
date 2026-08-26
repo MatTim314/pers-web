@@ -1,0 +1,6 @@
+Where does the blame lies. Talks about past experiences, which make me feel cowardly when compared to those of others. I was a coward. I couldn't take it back then, I stood on flimsy ground. I wished to return home, I almost cried when I saw a stocked fridge and a warm shower. 
+
+
+--
+
+I often think of myself as inferior in some aspect to an imaginary person. Since there is no single idea of who am i, or what am i, it sort of always seems i fall short in reaching any singular aspect of personality fully. I'm not brash enough in moving towards my goals. I'm not gentle enough to the people around me when I am brash. Every road I think of is not perfect in at least one aspect. Is this perfectionism? Am I trying to be perfect, in every situation, in every moment I wish to have the perfect response. Coupled with the fact that any response rarely feels natural. My reactions often feel like impersonations. As if an actor, learned about his role and now he can predict how the character would move, and speak and react. Often it's from a place of humor. 
