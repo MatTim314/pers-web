@@ -1,0 +1,229 @@
+---
+const pageTitle = "Morocco Trip";
+---
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" />
+  <style>
+    .timeline {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.9rem;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 3px;
+      background: #48c78e;
+      border-radius: 3px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    .timeline-marker {
+      position: absolute;
+      left: -2.5rem;
+      top: 0.35rem;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      background: #48c78e;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .hero-morocco {
+      background: linear-gradient(135deg, #c1272d 0%, #006233 100%);
+    }
+    dialog.qr-dialog {
+      border: none;
+      border-radius: 8px;
+      padding: 1.25rem;
+      max-width: 320px;
+      width: 90vw;
+    }
+    dialog.qr-dialog::backdrop {
+      background: rgba(10, 10, 10, 0.7);
+    }
+    dialog.qr-dialog img {
+      display: block;
+      width: 100%;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero hero-morocco is-small">
+    <div class="hero-body">
+      <p class="title has-text-white">🇲🇦 Morocco Trip</p>
+      <p class="subtitle has-text-white">30 August – 6 September 2026</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width: 800px">
+
+      <div class="columns is-mobile has-text-centered mb-5">
+        <div class="column">
+          <p class="heading">Departure</p>
+          <p class="title is-5">Sun 30 Aug</p>
+        </div>
+        <div class="column">
+          <p class="heading">Duration</p>
+          <p class="title is-5">6 days</p>
+        </div>
+        <div class="column">
+          <p class="heading">Return</p>
+          <p class="title is-5">Sun 6 Sept</p>
+        </div>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-marker">🚌</div>
+          <div class="box">
+            <p class="title is-5">Flixbus — Brno → Vienna Airport</p>
+            <p class="subtitle is-6">Sun 30 Aug</p>
+            <div class="columns is-mobile">
+              <div class="column">
+                <span class="tag is-info is-light mb-1">Departure</span>
+                <p><strong>02:00</strong> — Brno (aut. nádr. Hotel Grand)</p>
+                <p class="is-size-7 has-text-grey">Platform 2A, 3, 3A · Route 919</p>
+              </div>
+              <div class="column">
+                <span class="tag is-success is-light mb-1">Arrival</span>
+                <p><strong>03:50</strong> — Vienna International Airport (VIE)</p>
+                <p class="is-size-7 has-text-grey">Platform 2</p>
+              </div>
+            </div>
+            <p class="is-size-7">Seats <strong>6A, 6B</strong></p>
+            <div class="mt-2">
+              <a class="is-size-7 mr-3" href="https://shop.flixbus.cz/rebooking/rebooking/online-ticket?ticket_id=0a8ce716-8207-4ab1-85d7-2bb6e6f0736d&_locale=cs" target="_blank" rel="noopener">View ticket ↗</a>
+              <button type="button" class="button is-small is-light" popovertarget="dlg-brno-vienna">🔳 Show QR</button>
+            </div>
+          </div>
+        </div>
+        <dialog id="dlg-brno-vienna" class="qr-dialog" popover>
+          <img src="/flixbus-brno-vienna.png" alt="Flixbus Brno to Vienna Airport QR ticket" />
+          <button type="button" class="button is-small is-fullwidth mt-3" popovertarget="dlg-brno-vienna" popovertargetaction="hide">Close</button>
+        </dialog>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">✈️</div>
+          <div class="box">
+            <p class="title is-5">Ryanair FR1532 — Vienna → Milan Bergamo</p>
+            <p class="subtitle is-6">Sun 30 Aug · Gate closes 06:50</p>
+            <p class="is-size-7">VIE → BGY · Passenger: Matej Timar · Seat 08E</p>
+            <button type="button" class="button is-small is-light mt-2" popovertarget="dlg-vie-bgy">🔳 Show boarding pass</button>
+          </div>
+        </div>
+        <dialog id="dlg-vie-bgy" class="qr-dialog" popover>
+          <img src="/plane-viena-milan.png" alt="Ryanair Vienna to Milan Bergamo boarding pass" />
+          <button type="button" class="button is-small is-fullwidth mt-3" popovertarget="dlg-vie-bgy" popovertargetaction="hide">Close</button>
+        </dialog>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">✈️</div>
+          <div class="box">
+            <p class="title is-5">Ryanair FR3962 — Milan Bergamo → Marrakesh</p>
+            <p class="subtitle is-6">Sun 30 Aug · Gate closes 10:30</p>
+            <p class="is-size-7">BGY → RAK · Passenger: Matej Timar · Seat 21E</p>
+            <button type="button" class="button is-small is-light mt-2" popovertarget="dlg-bgy-rak">🔳 Show boarding pass</button>
+          </div>
+        </div>
+        <dialog id="dlg-bgy-rak" class="qr-dialog" popover>
+          <img src="/plane-milan-marrakesh.png" alt="Ryanair Milan Bergamo to Marrakesh boarding pass" />
+          <button type="button" class="button is-small is-fullwidth mt-3" popovertarget="dlg-bgy-rak" popovertargetaction="hide">Close</button>
+        </dialog>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">🚗</div>
+          <div class="box">
+            <p class="title is-5">Car Rental — Oyama Car</p>
+            <p class="subtitle is-6">Dacia Logan Essence (or similar)</p>
+            <div class="columns is-mobile">
+              <div class="column">
+                <span class="tag is-info is-light mb-1">Pick-up</span>
+                <p><strong>30 Aug, 15:00</strong></p>
+                <p class="is-size-7 has-text-grey">Marrakech Airport, parking lot, corridor B, place no. 290</p>
+              </div>
+              <div class="column">
+                <span class="tag is-danger is-light mb-1">Drop-off</span>
+                <p><strong>5 Sept, 10:00</strong></p>
+                <p class="is-size-7 has-text-grey">Marrakech Airport</p>
+              </div>
+            </div>
+            <div class="content is-size-7">
+              <ul>
+                <li>Total: <strong>€234</strong> (6 days) — no deposit required, paid on-site (cash EUR/MAD or card)</li>
+                <li>Unlimited mileage · All-risk insurance · Delivery &amp; collection · 24/7 assistance</li>
+                <li>Franchise redemption included</li>
+              </ul>
+              <p>Contact: M. Khalifa / Oyama Car — WhatsApp <a href="https://wa.me/212673724646" target="_blank" rel="noopener">+212 673-724646</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">🏝️</div>
+          <div class="box has-background-primary-light">
+            <p class="title is-5">Explore Morocco</p>
+            <p class="subtitle is-6">30 Aug – 5 Sept</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">✈️</div>
+          <div class="box">
+            <p class="title is-5">Fly back to Vienna</p>
+            <p class="subtitle is-6">Marrakech (RAK) → Vienna</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">🚌</div>
+          <div class="box">
+            <p class="title is-5">Flixbus — Vienna Airport → Brno</p>
+            <p class="subtitle is-6">Sun 6 Sept</p>
+            <div class="columns is-mobile">
+              <div class="column">
+                <span class="tag is-info is-light mb-1">Departure</span>
+                <p><strong>17:45</strong> — Vienna Airport (VIE)</p>
+                <p class="is-size-7 has-text-grey">Platform 2 · Route 919</p>
+              </div>
+              <div class="column">
+                <span class="tag is-success is-light mb-1">Arrival</span>
+                <p><strong>20:00</strong> — Brno (bus station Hotel Grand)</p>
+                <p class="is-size-7 has-text-grey">Platform 2A, 3, 3A</p>
+              </div>
+            </div>
+            <p class="is-size-7">Seats <strong>6C, 6D</strong></p>
+            <div class="mt-2">
+              <a class="is-size-7 mr-3" href="https://shop.flixbus.co.uk/rebooking/rebooking/online-ticket?ticket_id=17f9af80-2573-4029-9388-38ee3059e177&_locale=en_gb" target="_blank" rel="noopener">View ticket ↗</a>
+              <button type="button" class="button is-small is-light" popovertarget="dlg-vienna-brno">🔳 Show QR</button>
+            </div>
+          </div>
+        </div>
+        <dialog id="dlg-vienna-brno" class="qr-dialog" popover>
+          <img src="/flixbus-vienna-brno.png" alt="Flixbus Vienna Airport to Brno QR ticket" />
+          <button type="button" class="button is-small is-fullwidth mt-3" popovertarget="dlg-vienna-brno" popovertargetaction="hide">Close</button>
+        </dialog>
+
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
